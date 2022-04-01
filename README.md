@@ -41,8 +41,13 @@ Para esta implementação iremos utilizar a API de users do Github, onde a docum
   * desenho da arquitetura de código
   * contrato de entrada e retorno da API
   * definição de frameworks e versões
+  * definição de ferramental utilizado pelo time
   * quebra de atividades (podem fazer uso do trello, criar atividades de POC ou Spikes)
  
 # Entrega
 Dia X
-...
+
+
+# Sugestões de starters
+https://github.com/chriswells0/node-typescript-template
+https://github.com/microsoft/TypeScript-Node-Starter
