@@ -49,5 +49,5 @@ Dia X
 
 
 # Sugestões de starters
-https://github.com/chriswells0/node-typescript-template
-https://github.com/microsoft/TypeScript-Node-Starter
+* https://github.com/chriswells0/node-typescript-template
+* https://github.com/microsoft/TypeScript-Node-Starter
