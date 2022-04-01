@@ -34,7 +34,7 @@ Para esta implementação iremos utilizar a API de users do Github, onde a docum
 
 * Times de 4 pessoas
 * Cada time deve criar um branch com o nome do time para o desenvolvimento
-* A aplicação deverá rodar em uma imagem docker, sendo compilada e executada a partir de um arquivo dockercompose
+* A aplicação deverá rodar em uma imagem docker, sendo compilada e executada a partir de um arquivo docker-compose
 * O time deve documentar em Readme: 
   * plano de versionamento do código
   * desenho da solução macro
