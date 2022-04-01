@@ -9,12 +9,12 @@
 * Arquitetura do Código
 * Separação de Responsabilidades
 * Manutenabilidade
-* Modelagem de dados (Estruturas de dados utilizadas, banco de dados, etc)
+* Modelagem de dados 
 * Tratamento de erros e fluxos alternativos
 
 # Desafio
 
-Para este desafio, iremos desenvolver uma pequena aplicação (backend em Node) que realiza consulta a um endpoint externo do Github, afim de trazer algumas informações básicas de um usuário:
+Para este desafio, iremos desenvolver uma pequena aplicação (backend em Node Typescript) que realiza consulta a um endpoint externo do Github, afim de trazer algumas informações básicas de um usuário:
 
 * Informações do perfil do usuário:
   * Avatar;
@@ -39,6 +39,7 @@ Para esta implementação iremos utilizar a API de users do Github, onde a docum
   * plano de versionamento do código
   * desenho da solução macro
   * desenho da arquitetura de código
+  * contrato de entrada e retorno da API
   * definição de frameworks e versões
   * quebra de atividades (podem fazer uso do trello, criar atividades de POC ou Spikes)
  
