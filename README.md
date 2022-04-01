@@ -48,6 +48,13 @@ Para esta implementação iremos utilizar a API de users do Github, onde a docum
 Dia X
 
 
-# Sugestões de starters
-* https://github.com/chriswells0/node-typescript-template
-* https://github.com/microsoft/TypeScript-Node-Starter
+# Sugestões
+* starters:
+ * https://github.com/chriswells0/node-typescript-template
+ * https://github.com/microsoft/TypeScript-Node-Starter
+* frameworks:
+ *  https://nestjs.com/ (desenvolvimento)
+ *  https://mochajs.org/ (teste)
+ *  https://jestjs.io/ (teste)
+ *  https://swagger.io/ (documentação de API)
+ *  https://hub.docker.com/ (imagens docker - alguma deve servir....rs)
