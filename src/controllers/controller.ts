@@ -6,7 +6,6 @@ import { gitModel, gitRepository } from '../models/gitModel';
 class Controller {
     async handle(req: Request, res: Response): Promise<Response> {
         const { name } = req.params;
-
         const userResponse = await axios.get(`https://api.github.com/users/${name}`);
         let favRepositories: gitRepository[] = [];
 
