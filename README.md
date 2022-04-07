@@ -24,9 +24,19 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Frameworks e versões
 
+* NestJS
+* Jest
+* Docker
+* Swagger
+
 ## Ferramental utilizado
 
+* Visual Studio Code
+* Git
+
 ## Quebra de atividades
+
+* Trello
 
 ## Autores
 
