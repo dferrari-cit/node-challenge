@@ -1,16 +1,16 @@
 interface gitModel {
-    Nome: string;
-    Avatar: string;
-    Biografia: string;
-    EnderecoPerfil: string;
-    RepostoriosFavoritos: gitRepository[]
+    name: string;
+    avatar_url: string;
+    bio: string;
+    html_url: string;
+    fav_repositories: gitRepository[]
 }
 
 interface gitRepository {
-    Nome: string,
-    Descricao: string,
-    Indicativo: string,
-    EnderecoPerfil: string;
+    name: string,
+    description: string,
+    private: boolean,
+    full_name: string;
 }
 
 export { gitModel, gitRepository }

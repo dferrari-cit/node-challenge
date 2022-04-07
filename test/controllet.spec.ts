@@ -1,22 +1,20 @@
-// import axios from "axios";
-// import { Service } from "src/service";
-// import { Controller } from "../src/controllers/controller"
-// import {listGitHub} from "../src/controllers/mocks"
-// describe("Acessa a API", () => {
-//     let controller = new Controller;
-//     it("Component controller deve ser criado", () => {
-//         expect(controller).toBeTruthy();
-//     })
+import { Service } from "../src/service/service";
+import {listGitHub} from "../src/controllers/mocks"
+describe("Acessa a API", () => {
+    let service = new Service;
+    it("Component controller deve ser criado", () => {
+        expect(service).toBeTruthy();
+    })
 
-//     it('responds with json', async () => {
-//         controller.handle()
-//         // var res = await axios.get(`http://localhost:4000/searchProfile/antoni0o`)
-//         expect(res.data).toEqual(listGitHub)
-//         expect(res.status).toEqual(200);
-//     });
+    it('responds with json', async () => {
+        let res = await service.execute("antoni0o");
+        // var res = await axios.get(`http://localhost:4000/searchProfile/antoni0o`)
+        expect(res).toEqual(listGitHub)
+        
+    });
 
-//     it("não deveria retornar usuário", () => {
+    // it("não deveria retornar usuário", () => {
 
-//     })
+    // })
 
-// })
+})
