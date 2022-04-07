@@ -1,7 +1,7 @@
 <p align = "center">
  <img src = "https://user-images.githubusercontent.com/102744463/162233721-3cff2430-46bb-4360-9b03-c02cad13bf2b.png"/>
 </p>
-<p>
+<p align = "center">
  <img src ="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p> 
 
