@@ -1,4 +1,4 @@
-# Coding Challenge #
+<!-- # Coding Challenge #
 
 ## Critérios
 
@@ -57,4 +57,44 @@ Dia X
   *  https://mochajs.org/ (teste)
   *  https://jestjs.io/ (teste)
   *  https://swagger.io/ (documentação de API)
-  *  https://hub.docker.com/ (imagens docker - alguma deve servir....rs)
+  *  https://hub.docker.com/ (imagens docker - alguma deve servir....rs) -->
+
+
+
+
+
+
+<h1 align="center">TIME DOS LEGAIS</h1>
+
+<br>
+<br>
+<br>
+
+## Plano De Versionamento De Código
+
+Nenhum
+
+## Desenho Da Solução Macro
+
+Diagrama aqui
+
+
+## Arquiteura Do Código
+
+Diagrama aqui
+
+
+## contrato de entrada e retorno da API
+
+Diagrama aqui
+
+## Frameworks e Versões
+
+Express
+node.js
+jest.js
+swagger
+
+## Quebra de Atividades
+
+Usamos a extensão do LiveShare para todos colaborarem ao mesmo tempo no desenvolvimento do projeto.

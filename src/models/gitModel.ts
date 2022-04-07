@@ -1,6 +1,6 @@
 interface gitModel {
-    Avatar: string;
     Nome: string;
+    Avatar: string;
     Biografia: string;
     EnderecoPerfil: string;
     RepostoriosFavoritos: gitRepository[]
