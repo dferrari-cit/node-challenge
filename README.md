@@ -1,60 +1,27 @@
-# Coding Challenge # .
+![Code Challenge (2)](https://user-images.githubusercontent.com/102744463/162233721-3cff2430-46bb-4360-9b03-c02cad13bf2b.png)
 
-## Critérios
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-* Compreensão dos requistos
-* Engenharia de Software
-* Cobertura de Testes - minimo de 80% do código
-* Versionamento
-* Arquitetura do Código
-* Separação de Responsabilidades
-* Manutenabilidade
-* Modelagem de dados 
-* Tratamento de erros e fluxos alternativos
+## Descrição do projeto
 
-# Desafio
+Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pequena aplicação backend, que realiza consulta a um endpoint externo do GitHub, afim de trazer algumas informações básicas de um usuário.
 
-Para este desafio, iremos desenvolver uma pequena aplicação (backend em Node Typescript) que realiza consulta a um endpoint externo do Github, afim de trazer algumas informações básicas de um usuário:
+## Funcionalidades do projeto
 
-* Informações do perfil do usuário:
-  * Avatar;
-  * Nome;
-  * Biografia;
-  * Endereço do perfil do usuário;
+`Exibição das informações do perfil do usuário desejado`: Avatar, Nome, Biografia, Endereço do perfil do usuário
+`Exibição dos 5 repositórios mais favoritados desse usuário`:  Nome, Descrição, Indicativo (flag) de privado, Endereço do perfil do repositório. 
 
-* Os 5 reposoistórios mais favoritados (stars) com as seguintes informações:
-  * Nome;
-  * Descrição;
-  * Indicativo (flag) de privado;
-  * Endereço do perfil do repositório;
+(adicionar prints ou gif mostrando a funcionalidade - Acethinker é um gravador de tela)
 
-Para esta implementação iremos utilizar a API de users do Github, onde a documentação  pode ser encontrada em  [https://developer.github.com/v3/users/](https://developer.github.com/v3/users/)
-
-# Requisito
-
-* Times de 4 pessoas
-* Cada time deve criar um branch com o nome do time para o desenvolvimento
-* A aplicação deverá rodar em uma imagem docker, sendo compilada e executada a partir de um arquivo docker-compose
-* O time deve documentar em Readme: 
-  * plano de versionamento do código
-  * desenho da solução macro
-  * desenho da arquitetura de código
-  * contrato de entrada e retorno da API
-  * definição de frameworks e versões
-  * definição de ferramental utilizado pelo time
-  * quebra de atividades (podem fazer uso do trello, criar atividades de POC ou Spikes)
+## Técnicas e tecnologias utilizadas
  
-# Entrega
-Dia X
+Nest
+Jestjs
+Swaggerio
+Docker 
 
 
-# Sugestões
-* starters:
-  * https://github.com/chriswells0/node-typescript-template
-  * https://github.com/microsoft/TypeScript-Node-Starter
-* frameworks:
-  *  https://nestjs.com/ (desenvolvimento)
-  *  https://mochajs.org/ (teste)
-  *  https://jestjs.io/ (teste)
-  *  https://swagger.io/ (documentação de API)
-  *  https://hub.docker.com/ (imagens docker - alguma deve servir....rs)
+## Autores
+
+ [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Anthony Gonçalves de Oliveira Souza</sub>](https://github.com/alexfelipe) | [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Carlos Cirqueira</sub>](https://github.com/cirqueiraciandt) |  [<img src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Carlos Roberto Vilela Júnior</sub>](https://github.com/carlosjrCIT) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Emilly Vitória Silva Trevisan</sub>](https://github.com/emillyvitoriast) |
+| :---: | :---: | :---: |gm
