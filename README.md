@@ -1,5 +1,5 @@
 <p align = "center">
- <img src = "https://user-images.githubusercontent.com/102744463/162233721-3cff2430-46bb-4360-9b03-c02cad13bf2b.png"/>
+ <img src = "https://user-images.githubusercontent.com/100810006/162290596-3c47a4f8-d3f5-4f06-aca2-1b79cb3de5f5.png"/>
 </p>
 <p align = "center">
  <img src ="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
@@ -7,7 +7,7 @@
 
 ## Descrição do projeto
 
-Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pequena aplicação backend, que realiza consulta a um endpoint externo do GitHub, afim de trazer algumas informações básicas de um usuário.
+Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pequena aplicação backend, que consome uma api externa do GitHub, afim de trazer algumas informações básicas de um usuário.
 
 ## Funcionalidades do projeto
 
@@ -24,7 +24,6 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Frameworks e versões
 
-* NestJS
 * Jest
 * Docker
 * Swagger
