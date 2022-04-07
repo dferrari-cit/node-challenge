@@ -14,8 +14,6 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 `Exibição das informações do perfil do usuário desejado`: Avatar, Nome, Biografia, Endereço do perfil do usuário <br><br>
 `Exibição dos 5 repositórios mais favoritados desse usuário`:  Nome, Descrição, Indicativo (flag) de privado, Endereço do perfil do repositório. 
 
-(adicionar prints ou gif mostrando a funcionalidade - Acethinker é um gravador de tela)
-
 ## Plano de versionamento do código
 
 ## Desenho da solução macro
