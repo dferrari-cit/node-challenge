@@ -3,7 +3,7 @@
 </p>
 <p align = "center">
  <img src ="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
-</p> 
+</p> <br> 
 
 ## Descrição do projeto
 
@@ -24,7 +24,7 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Frameworks e versões
 
-* NestJS
+* NestJS 8.2.4
 * Jest
 * Docker
 * Swagger
