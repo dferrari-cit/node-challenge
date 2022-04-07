@@ -14,6 +14,7 @@ async function bootstrap() {
     .setExternalDoc('READ-ME', 'https://docs.google.com/document/d/1p8uCCKS2vgpbgy5MAZ6pB9U7tns1NQjsiuZWu1yilrk/edit')
 
     .addTag('hello')
+    .addTag('gitHub-User')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
