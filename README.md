@@ -23,5 +23,3 @@ Docker
 
 ## Autores
 
- [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Anthony Gonçalves de Oliveira Souza</sub>](https://github.com/alexfelipe) | [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Carlos Cirqueira</sub>](https://github.com/cirqueiraciandt) |  [<img src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Carlos Roberto Vilela Júnior</sub>](https://github.com/carlosjrCIT) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Emilly Vitória Silva Trevisan</sub>](https://github.com/emillyvitoriast) |
-| :---: | :---: | :---: |gm
