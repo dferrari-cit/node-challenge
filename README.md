@@ -16,13 +16,19 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 (adicionar prints ou gif mostrando a funcionalidade - Acethinker é um gravador de tela)
 
-## Técnicas e tecnologias utilizadas
- 
-* Nest
-* Jestjs
-* Swaggerio
-* Docker 
+## Plano de versionamento do código
 
+## Desenho da solução macro
+
+## Desenho da arquitetura de código
+
+## Contrato de entrada e retorno da API
+
+## Frameworks e versões
+
+## Ferramental utilizado
+
+## Quebra de atividades
 
 ## Autores
 
