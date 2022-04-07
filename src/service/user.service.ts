@@ -1,19 +1,19 @@
 import { Injectable } from "@nestjs/common";
 import { request } from "@octokit/request";
+import { StarredDto } from "src/adapter/starred.dto";
+import { UserDto } from "src/adapter/user.dto";
+import { StarredDtoMapper } from "src/mapper/starred-dto.mapper";
+import { UserDtoMapper } from "src/mapper/user-dto.mapper";
 @Injectable()
 export class UserService{
-    async findByUserName(userName: string): Promise<any>{
-        try {
-            return await request('GET /users' + userName);
-        } catch (error) {
-            return error;
-        }
+    constructor(private userDtoMapper: UserDtoMapper, private starredDtoMapper: StarredDtoMapper){}
+
+    async findByUserName(userName: string): Promise<[UserDto, StarredDto[]]>{
+                const userDto: UserDto = this.userDtoMapper.responseToDto(await request('GET /users/' + userName));
+                const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
+                return [userDto, starredDto];
     }
-    async listStarredsOfUser(starredUrl: string): Promise<any>{
-        try {
-            return await request('GET /users' + starredUrl);
-        } catch (error) {
-            return error;
-        }
+    private async listStarreds(userName: string): Promise<Array<StarredDto>>{
+        return (await request('GET /users/' + userName + '/starred')).data;
     }
 }
