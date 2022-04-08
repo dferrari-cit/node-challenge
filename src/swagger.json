@@ -1,0 +1,48 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API para consulta de usuarios do github",
+        "description": "Esta API consulta os dados de um usuario e seus repositorios no github, consumindo uma api externa do github",
+        "contact": {
+            "email": "testeeamail@email.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:4000/",
+            "description": "API de teste"
+        }
+    ],
+    "paths": {
+        "/searchProfile/{name}": {
+            "get": {
+                "summary": "Requisição de usuarios pelo nome",
+                "description": "Esta rota irá retornar as informações de um usuario do github",
+                "tags": [
+                    "users"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "nome do usuario para pesquisa",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
