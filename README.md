@@ -40,5 +40,8 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Autores
 
+| [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |  [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |  [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |
+| :---: | :---: | :---: 
+
 <!-- | [<img src="https://user-images.githubusercontent.com/102744463/162427456-1349d245-114e-4fb4-b263-298b8394fc6f.png" width=100/><br><sub>Anthony Souza</sub>](https://github.com/Anthony-ops) | [<img src="https://user-images.githubusercontent.com/102744463/162428129-7f8ca676-18d2-4799-a2ec-230f9400b55c.png" width=100/><br> <sub>Carlos Cirqueira</sub>](https://github.com/Cirqueira-ops) | [<img src="https://user-images.githubusercontent.com/102744463/162428425-e2bbf0db-e72b-4215-9559-2b68a73958f9.png" width=100/> <br> <sub>Carlos Júnior</sub>](https://github.com/Junior-ops) | [<img src="https://user-images.githubusercontent.com/102744463/162428670-03ab82cd-49e9-4e83-a6bb-8cf37e8ad035.png)" width=100/><br><sub>Emilly Trevisan</sub>] (https://github.com/Emilly-ops) |
  | :---: | :---: | :---: -->
