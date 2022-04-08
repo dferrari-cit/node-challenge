@@ -20,6 +20,9 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Desenho da arquitetura de código
 
+<img src ="https://user-images.githubusercontent.com/102744463/162490820-f841c617-fa4a-46f9-8229-e49660e1ab70.png" width=1700/>
+
+
 ## Contrato de entrada e retorno da API
 
 ## Frameworks e versões
