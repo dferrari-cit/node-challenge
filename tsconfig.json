@@ -19,5 +19,5 @@
     },
     "include": [
         "src/**/*"
-, "test/controllet.spec.ts"    ]
+, "test/controller.spec.ts"    ]
 }

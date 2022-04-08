@@ -1,100 +1,40 @@
-<!-- # Coding Challenge #
+<p align = "center">
+ <img src = "https://user-images.githubusercontent.com/100810006/162290596-3c47a4f8-d3f5-4f06-aca2-1b79cb3de5f5.png"/>
+</p>
+<p align = "center">
+ <img src ="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p> 
 
-## Critérios
+## Descrição do projeto
 
-* Compreensão dos requistos
-* Engenharia de Software
-* Cobertura de Testes - minimo de 80% do código
-* Versionamento
-* Arquitetura do Código
-* Separação de Responsabilidades
-* Manutenabilidade
-* Modelagem de dados 
-* Tratamento de erros e fluxos alternativos
+Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pequena aplicação backend, que consome uma api externa do GitHub, afim de trazer algumas informações básicas de um usuário.
 
-# Desafio
+## Funcionalidades do projeto
 
-Para este desafio, iremos desenvolver uma pequena aplicação (backend em Node Typescript) que realiza consulta a um endpoint externo do Github, afim de trazer algumas informações básicas de um usuário:
+`Exibição das informações do perfil do usuário desejado`: Avatar, Nome, Biografia, Endereço do perfil do usuário <br><br>
+`Exibição dos 5 repositórios mais favoritados desse usuário`:  Nome, Descrição, Indicativo (flag) de privado, Endereço do perfil do repositório. 
 
-* Informações do perfil do usuário:
-  * Avatar;
-  * Nome;
-  * Biografia;
-  * Endereço do perfil do usuário;
+## Plano de versionamento do código
 
-* Os 5 reposoistórios mais favoritados (stars) com as seguintes informações:
-  * Nome;
-  * Descrição;
-  * Indicativo (flag) de privado;
-  * Endereço do perfil do repositório;
+## Desenho da solução macro
 
-Para esta implementação iremos utilizar a API de users do Github, onde a documentação  pode ser encontrada em  [https://developer.github.com/v3/users/](https://developer.github.com/v3/users/)
+## Desenho da arquitetura de código
 
-# Requisito
+## Contrato de entrada e retorno da API
 
-* Times de 4 pessoas
-* Cada time deve criar um branch com o nome do time para o desenvolvimento
-* A aplicação deverá rodar em uma imagem docker, sendo compilada e executada a partir de um arquivo docker-compose
-* O time deve documentar em Readme: 
-  * plano de versionamento do código
-  * desenho da solução macro
-  * desenho da arquitetura de código
-  * contrato de entrada e retorno da API
-  * definição de frameworks e versões
-  * definição de ferramental utilizado pelo time
-  * quebra de atividades (podem fazer uso do trello, criar atividades de POC ou Spikes)
- 
-# Entrega
-Dia X
+## Frameworks e versões
 
+* Jest
+* Docker
+* Swagger
 
-# Sugestões
-* starters:
-  * https://github.com/chriswells0/node-typescript-template
-  * https://github.com/microsoft/TypeScript-Node-Starter
-* frameworks:
-  *  https://nestjs.com/ (desenvolvimento)
-  *  https://mochajs.org/ (teste)
-  *  https://jestjs.io/ (teste)
-  *  https://swagger.io/ (documentação de API)
-  *  https://hub.docker.com/ (imagens docker - alguma deve servir....rs) -->
+## Ferramental utilizado
 
+* Visual Studio Code
+* Git
 
+## Quebra de atividades
 
+* Trello
 
-
-
-<h1 align="center">TIME DOS LEGAIS</h1>
-
-<br>
-<br>
-<br>
-
-## Plano De Versionamento De Código
-
-Nenhum
-
-## Desenho Da Solução Macro
-
-Diagrama aqui
-
-
-## Arquiteura Do Código
-
-Diagrama aqui
-
-
-## contrato de entrada e retorno da API
-
-Diagrama aqui
-
-## Frameworks e Versões
-
-Express
-node.js
-jest.js
-swagger
-
-## Quebra de Atividades
-
-Usamos a extensão do LiveShare para todos colaborarem ao mesmo tempo no desenvolvimento do projeto.
+## Autores
