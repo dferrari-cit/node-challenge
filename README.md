@@ -40,5 +40,5 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Autores
 
-[<img src="https://user-images.githubusercontent.com/102744463/162427456-1349d245-114e-4fb4-b263-298b8394fc6f.png" width=100 <br> <sub>Anthony Souza</sub>](https://github.com/Anthony-ops) || :---: |
+[<img src="https://user-images.githubusercontent.com/102744463/162427456-1349d245-114e-4fb4-b263-298b8394fc6f.png" width=100/> <br> <sub>Anthony Souza</sub>](https://github.com/Anthony-ops) || :---: |
 
