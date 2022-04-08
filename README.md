@@ -16,17 +16,30 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Plano de versionamento do código
 
+* Trunk-based flow
+
 ## Desenho da solução macro
+
 
 ## Desenho da arquitetura de código
 
+model
+middlewares
+routes
+service
+controllers
+
 ## Contrato de entrada e retorno da API
+
+
+
 
 ## Frameworks e versões
 
-* Jest
-* Docker
-* Swagger
+* Express 17.13
+* Jest 27.4.1
+* Docker Compose 1.29.2
+* Swagger 
 
 ## Ferramental utilizado
 
