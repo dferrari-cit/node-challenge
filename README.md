@@ -39,9 +39,9 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 * Trello
 
 ## Autores
-<div align="center">
-<img src="https://user-images.githubusercontent.com/102744463/162427456-1349d245-114e-4fb4-b263-298b8394fc6f.png" width=100 border-radius=50/>
-<img src="https://user-images.githubusercontent.com/102744463/162428129-7f8ca676-18d2-4799-a2ec-230f9400b55c.png" width=100/>
-<img src="https://user-images.githubusercontent.com/102744463/162428425-e2bbf0db-e72b-4215-9559-2b68a73958f9.png" width=100/>
-<img src="https://user-images.githubusercontent.com/102744463/162428670-03ab82cd-49e9-4e83-a6bb-8cf37e8ad035.png" width=100/>
+<div align="left">
+<img src="https://user-images.githubusercontent.com/102744463/162433818-69293d6c-0c24-4af9-a32f-1547cd14840e.png" width=70 border-radius=50/>
+<img src="https://user-images.githubusercontent.com/102744463/162433734-78b7e53a-9bed-41ae-ad27-fb9638a09ba6.png" width=70/>
+<img src="https://user-images.githubusercontent.com/102744463/162433918-b635af32-782b-4fac-865c-b2ec087fea28.png" width=70/>
+<img src="https://user-images.githubusercontent.com/102744463/162433618-1251d862-437a-4271-b7a0-bcebc7634c15.png" width=70/>
 </div> 
