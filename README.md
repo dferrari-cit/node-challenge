@@ -2,7 +2,7 @@
  <img src = "https://user-images.githubusercontent.com/102744463/162233721-3cff2430-46bb-4360-9b03-c02cad13bf2b.png"/>
 </p>
 <p align = "center">
- <img src ="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+ <img src ="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=plastic"/>
 </p> <br> 
 
 ## Descrição do projeto
@@ -39,4 +39,6 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 * Trello
 
 ## Autores
+
+[<img src="https://user-images.githubusercontent.com/102744463/162427456-1349d245-114e-4fb4-b263-298b8394fc6f.png" width=100 <br> <sub>Anthony Souza</sub>](https://github.com/Anthony-ops) || :---: |
 
