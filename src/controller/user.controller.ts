@@ -1,8 +1,8 @@
 import { Controller, Get, Param } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { UserMapper } from "src/mapper/user.model.mapper";
-import { UserModel } from "src/model/user.model";
-import { UserService } from "src/service/user.service";
+import { UserMapper } from "../mapper/user.model.mapper";
+import { UserModel } from "../model/user.model";
+import { UserService } from "../service/user.service";
 
 
 @Controller('user')

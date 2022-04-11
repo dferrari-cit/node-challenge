@@ -1,9 +1,9 @@
 import { Module } from "@nestjs/common";
-import { UserController } from "src/controller/user.controller";
-import { StarredDtoMapper } from "src/mapper/starred-dto.mapper";
-import { UserDtoMapper } from "src/mapper/user-dto.mapper";
-import { UserMapper } from "src/mapper/user.model.mapper";
-import { UserService } from "src/service/user.service";
+import { UserController } from "../controller/user.controller";
+import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
+import { UserDtoMapper } from "../mapper/user-dto.mapper";
+import { UserMapper } from "../mapper/user.model.mapper";
+import { UserService } from "../service/user.service";
 
 @Module({
     controllers: [UserController],
