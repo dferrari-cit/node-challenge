@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { StarredDto } from "src/adapter/starred.dto";
+import { StarredDto } from "../adapter/starred.dto";
 
 @Injectable()
 export class StarredDtoMapper{

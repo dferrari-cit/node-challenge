@@ -30,7 +30,5 @@ export class UserController {
     async userInfo(@Param('user') user: string) {
         const response = await this.userService.findByUserName(user);
         return this.userMapper.dtoToModel(response);
-
-
     }
 }

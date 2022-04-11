@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { request } from "@octokit/request";
-import { StarredDto } from "src/adapter/starred.dto";
-import { UserDto } from "src/adapter/user.dto";
-import { StarredDtoMapper } from "src/mapper/starred-dto.mapper";
-import { UserDtoMapper } from "src/mapper/user-dto.mapper";
+import { StarredDto } from "../adapter/starred.dto";
+import { UserDto } from "../adapter/user.dto";
+import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
+import { UserDtoMapper } from "../mapper/user-dto.mapper";
 @Injectable()
 export class UserService {
     constructor(private userDtoMapper: UserDtoMapper, private starredDtoMapper: StarredDtoMapper) { }

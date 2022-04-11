@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { StarredDto } from "src/adapter/starred.dto";
-import { UserDto } from "src/adapter/user.dto";
-import { StarredModel } from "src/model/starred.model";
-import { UserModel } from "src/model/user.model";
+import { StarredDto } from "../adapter/starred.dto";
+import { UserDto } from "../adapter/user.dto";
+import { StarredModel } from "../model/starred.model";
+import { UserModel } from "../model/user.model";
 
 @Injectable()
 export class UserMapper{
