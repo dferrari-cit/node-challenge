@@ -24,11 +24,7 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Desenho da arquitetura de código
 
-model
-middlewares
-routes
-service
-controllers
+<img src ="https://user-images.githubusercontent.com/100810006/162761159-257bbaff-e8bb-41dd-be90-522ad33fd439.png">
 
 ## Contrato de entrada e retorno da API
 <img src="https://user-images.githubusercontent.com/100810006/162440090-a542d7f1-1ef9-41aa-909b-a90a46fe9966.png">
