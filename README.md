@@ -17,9 +17,10 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 ## Plano de versionamento do código
 
 * Trunk-based flow
+<img src="https://user-images.githubusercontent.com/100810006/162452657-6a7fa346-4ebb-4ad2-8dff-b6ce03db34f8.png">
+
 
 ## Desenho da solução macro
-<img src="https://user-images.githubusercontent.com/100810006/162452657-6a7fa346-4ebb-4ad2-8dff-b6ce03db34f8.png">
 
 ## Desenho da arquitetura de código
 
