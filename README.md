@@ -22,8 +22,9 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 <img src ="https://user-images.githubusercontent.com/102744463/162490820-f841c617-fa4a-46f9-8229-e49660e1ab70.png" width=1700/>
 
-
 ## Contrato de entrada e retorno da API
+
+![Contrato ES2](https://user-images.githubusercontent.com/102745212/162958103-5d51ac9e-7592-45a7-8686-3dd63dd61483.jpeg)
 
 ## Frameworks e versões
 
