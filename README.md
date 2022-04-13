@@ -29,7 +29,7 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 ## Frameworks e versões
 
 * NestJS 8.2.4
-* Jest
+* Jest 27.4.1
 * Docker
 * Swagger
 
