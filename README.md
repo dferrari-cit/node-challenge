@@ -18,13 +18,20 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Desenho da solução macro
 
+<p align = "center">
+<img src="https://user-images.githubusercontent.com/102744463/163205681-eb2c8c80-0f38-4a54-9b62-f5ea6a206b0d.png"/>
+</p>
+
 ## Desenho da arquitetura de código
 
-<img src ="https://user-images.githubusercontent.com/102744463/162490820-f841c617-fa4a-46f9-8229-e49660e1ab70.png" width=1700/>
-
+<p align = "center">
+<img src ="https://user-images.githubusercontent.com/102744463/162490820-f841c617-fa4a-46f9-8229-e49660e1ab70.png" width=800/>
+</p><br>
+ 
 ## Contrato de entrada e retorno da API
-
-<img src ="https://user-images.githubusercontent.com/102745212/162958103-5d51ac9e-7592-45a7-8686-3dd63dd61483.jpeg" />
+<p align = "center">
+<img src ="https://user-images.githubusercontent.com/102745212/162958103-5d51ac9e-7592-45a7-8686-3dd63dd61483.jpeg"/>
+</p>
 
 ## Frameworks e versões
 
