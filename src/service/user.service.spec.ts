@@ -5,6 +5,7 @@ import { UserDtoMapper } from "../mapper/user-dto.mapper";
 import { UserService } from "./user.service";
 import { ResponseUserMock } from "./mocks/response-user-dto.mock";
 import { ResponseStarreMock } from "./mocks/response-starred-dto.mock";
+import { HttpException } from "@nestjs/common";
 
 describe('UserService', () => {
     let userService: UserService;
@@ -12,7 +13,6 @@ describe('UserService', () => {
     let starredDtoMapper: StarredDtoMapper;
     let userDto: UserDto;
     let starredDto: Array<StarredDto>;
-    let exception;
     let name: string;
   
     beforeEach(() => {
@@ -43,8 +43,7 @@ describe('UserService', () => {
       });
 
       it('should return an error', () => {
-        jest.spyOn(userService, 'findByUserName').mockImplementation(() => exception);
-        expect(userService.findByUserName('')).toThrowError();
+        return expect(userService.findByUserName('')).rejects.toThrow();
       });
     });
 });

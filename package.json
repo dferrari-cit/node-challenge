@@ -61,6 +61,15 @@
       "json",
       "ts"
     ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "test-config",
+      "interfaces",
+      "jestGlobalMocks.ts",
+      ".module.ts",
+      "main.ts",
+      ".mock.ts"
+  ],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
