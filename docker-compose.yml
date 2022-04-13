@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  api:
+    build: .
+    container_name: nestapi
+    ports:
+      - "3000:3000"
