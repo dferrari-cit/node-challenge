@@ -7,10 +7,10 @@
 
 ## Descrição do projeto
 
-Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pequena aplicação backend, que realiza consulta a um endpoint externo do GitHub, afim de trazer algumas informações básicas de um usuário.
+Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pequena aplicação backend, que realiza consulta a um endpoint externo do GitHub, afim de trazer algumas informações básicas de um usuário. 
 
 ## Funcionalidades do projeto
-
+`Busca das informações do perfil do usuário desejado`: Através do nome de usuário <br><br>
 `Exibição das informações do perfil do usuário desejado`: Avatar, Nome, Biografia, Endereço do perfil do usuário <br><br>
 `Exibição dos 5 repositórios mais favoritados desse usuário`:  Nome, Descrição, Indicativo (flag) de privado, Endereço do perfil do repositório. 
 
@@ -24,14 +24,14 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 
 ## Contrato de entrada e retorno da API
 
-![Contrato ES2](https://user-images.githubusercontent.com/102745212/162958103-5d51ac9e-7592-45a7-8686-3dd63dd61483.jpeg)
+<img src ="https://user-images.githubusercontent.com/102745212/162958103-5d51ac9e-7592-45a7-8686-3dd63dd61483.jpeg" />
 
 ## Frameworks e versões
 
 * NestJS 8.2.4
 * Jest 27.4.1
-* Docker
-* Swagger
+* DockerCompose 1.25.0
+* Swagger 5.2.1
 
 ## Ferramental utilizado
 
