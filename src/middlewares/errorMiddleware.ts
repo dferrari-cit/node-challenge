@@ -12,6 +12,6 @@ function errorMiddleware(err: Error, request: Request, response: Response, _next
     status: "error",
     message: `Internal server error - ${err.message} `,
   });
-};
+}
 
 export { errorMiddleware };

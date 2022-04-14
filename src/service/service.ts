@@ -1,5 +1,5 @@
 import axios from "axios";
-import { gitModel, gitRepository } from "../models/gitModel";
+import { GitModel, GitRepository } from "../models/gitModel";
 
 import { AppError } from "../errors/AppError";
 
@@ -14,14 +14,14 @@ class Service {
       });
 
 
-    let favRepositories: gitRepository[] = [];
+    let favRepositories: GitRepository[] = [];
 
     let favResponse = await axios.get(
       `https://api.github.com/users/${name}/starred?page=1&per_page=5`
     );
 
-    favResponse.data.map((repository: gitRepository) => {
-      let favRepository: gitRepository = {
+    favResponse.data.map((repository: GitRepository) => {
+      let favRepository: GitRepository = {
         name: repository.name,
         description: repository.description,
         private: repository.private,
@@ -31,7 +31,7 @@ class Service {
       favRepositories.push(favRepository);
     });
 
-    const user: gitModel = {
+    const user: GitModel = {
       name: userResponse.data.login,
       avatar_url: userResponse.data.avatar_url,
       bio: userResponse.data.bio,

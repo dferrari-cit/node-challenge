@@ -1,16 +1,16 @@
-interface gitModel {
+interface GitModel {
     name: string;
     avatar_url: string;
     bio: string;
     html_url: string;
-    fav_repositories: gitRepository[]
+    fav_repositories: GitRepository[]
 }
 
-interface gitRepository {
+interface GitRepository {
     name: string,
     description: string,
     private: boolean,
     full_name: string;
 }
 
-export { gitModel, gitRepository }
+export { GitModel, GitRepository }
