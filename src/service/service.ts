@@ -2,6 +2,7 @@ import axios from "axios";
 import { GitModel, GitRepository } from "../models/gitModel";
 
 import { AppError } from "../errors/AppError";
+import { User } from "../models/schemas";
 
 class Service {
   async execute(name: string) {
@@ -13,8 +14,12 @@ class Service {
         );
       });
 
+<<<<<<< Updated upstream
 
     let favRepositories: GitRepository[] = [];
+=======
+    let favRepositories: gitRepository[] = [];
+>>>>>>> Stashed changes
 
     let favResponse = await axios.get(
       `https://api.github.com/users/${name}/starred?page=1&per_page=5`
@@ -31,7 +36,11 @@ class Service {
       favRepositories.push(favRepository);
     });
 
+<<<<<<< Updated upstream
     const user: GitModel = {
+=======
+    const githubUser: gitModel = {
+>>>>>>> Stashed changes
       name: userResponse.data.login,
       avatar_url: userResponse.data.avatar_url,
       bio: userResponse.data.bio,
@@ -39,7 +48,19 @@ class Service {
       fav_repositories: favRepositories,
     };
 
-    return user;
+    let user = new User({
+      name: githubUser.name,
+      avatar_url: githubUser.avatar_url,
+      bio: githubUser.bio,
+      html_url: githubUser.html_url,
+      gitRepository: [
+        ...favRepositories
+      ]
+    })
+
+    user.save();
+
+    return githubUser;
   }
 }
 

@@ -36,5 +36,4 @@ describe("Validação das chamadas da api", () => {
             expect(error.message).toBe("Request failed with status code 404");
         }
     })
-
 })
