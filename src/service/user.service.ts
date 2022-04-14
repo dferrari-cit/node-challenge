@@ -21,8 +21,12 @@ export class UserService {
                 throw new HttpException({
                     status: HttpStatus.NOT_FOUND,
                     error: 'User not found!',
-                  }, HttpStatus.NOT_FOUND);
-
+                }, HttpStatus.NOT_FOUND);
+            } else if (error.status === 500) {
+                throw new HttpException({
+                    status: HttpStatus.INTERNAL_SERVER_ERROR,
+                    error: 'Cannot establish connection with GitHub.',
+                }, HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
     }
