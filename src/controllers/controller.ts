@@ -7,9 +7,8 @@ class Controller {
         const service = new Service();
 
         const { name } = req.params;
-        
-        const user = await service.execute(name);
 
+        const user = await service.execute(name);
         return res.status(200).json(user);
     }
 }
