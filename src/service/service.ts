@@ -14,12 +14,8 @@ class Service {
         );
       });
 
-<<<<<<< Updated upstream
 
     let favRepositories: GitRepository[] = [];
-=======
-    let favRepositories: gitRepository[] = [];
->>>>>>> Stashed changes
 
     let favResponse = await axios.get(
       `https://api.github.com/users/${name}/starred?page=1&per_page=5`
@@ -36,11 +32,7 @@ class Service {
       favRepositories.push(favRepository);
     });
 
-<<<<<<< Updated upstream
-    const user: GitModel = {
-=======
-    const githubUser: gitModel = {
->>>>>>> Stashed changes
+    const githubUser: GitModel = {
       name: userResponse.data.login,
       avatar_url: userResponse.data.avatar_url,
       bio: userResponse.data.bio,
