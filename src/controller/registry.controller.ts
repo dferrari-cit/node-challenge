@@ -1,10 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
-import { ApiResponse, ApiTags } from "@nestjs/swagger";
-import { get } from "http";
-import { DBService } from "src/service/db.service";
-import { Registry } from "./registry";
-
-
+import { ApiTags } from "@nestjs/swagger";
+import { Registry } from "../model/registry.model";
+import { DBService } from "../service/db.service";
 
 @Controller('search')
 @ApiTags('Search-Registry')
@@ -19,24 +16,21 @@ export class RegistryController {
         return this.registryService.getAll();
     }
 
-        //  @Get(':userName')
-        //  async getByName(@Param('userName') userName: string): Promise<any> {
-        //      console.log('caiu aqui')
-        //      return this.registryService.getByName(userName);
-        //  }
+    // @Get(':searchedName')
+    // async getByName(@Param('searchedName') userName: string): Promise<any> {
+    //     return this.registryService.getByName(userName);
+    // }
 
-    @Get(':date')
-    async getBydate(@Param('date') date: Date): Promise<any> {
-        console.log(date)
-        return this.registryService.getByDate(date);
+    @Get(':searchedData')
+    async getBydate(@Param('searchedData') searchedData: string): Promise<any> {
+        return this.registryService.getByDate(searchedData);
     }
 
     @Post()
     //@ApiResponse({ status: 200, description: 'Successful!', type:  Registry})
     async create(@Body() registry: Registry): Promise<Registry>  {
         const dataAtual = new Date();
-        registry.data=dataAtual;
-        //registry.data=dataAtual.toString().slice(0,21);
+        registry.searchedData=dataAtual.toString().slice(0, 21).replace(/ /g, '-');
         return this.registryService.create(registry);
     }
 

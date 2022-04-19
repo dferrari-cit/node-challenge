@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
-import { MongooseModule } from '@nestjs/mongoose';
+import { MongooseModule } from "@nestjs/mongoose";
+import { RegistrySchema } from "../adapter/registry.schema";
 import { DBService } from "../service/db.service";
-import { RegistrySchema } from "../registry/schemas/registry.schema";
 import { RegistryController } from "./registry.controller";
 
 @Module({
