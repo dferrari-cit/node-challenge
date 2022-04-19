@@ -4,7 +4,7 @@ import { GetAllStoredUsersService } from '../service/getAllStoredDataService';
 
 class GetUsersController {
 
-    async handle(req: Request, res: Response): Promise<Response> {
+    async handle(_req: Request, res: Response): Promise<Response> {
 
         const service = new GetAllStoredUsersService();
         const data = await service.execute();
