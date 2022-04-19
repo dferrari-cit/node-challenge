@@ -1,4 +1,4 @@
-import { UserDto } from "../../adapter/user.dto";
+import { UserDto } from "../../../src/adapter/user.dto";
 
 export const ResponseUserMock = new UserDto(
     'https://avatars.githubusercontent.com/u/91613?v=4',

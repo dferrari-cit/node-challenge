@@ -17,7 +17,9 @@ export class StarredDtoMapper{
         return this.maxList(starredListDto);
     }
     private maxList(starredDtoList: Array<StarredDto>){
-        let limiter = starredDtoList.length < 5 && starredDtoList.length > 0 ? starredDtoList.length : 5;
+        const maximunLimit = 5;
+        let limiter = starredDtoList.length < maximunLimit && starredDtoList.length > 0 ? 
+        starredDtoList.length : maximunLimit;
         let starredlistLimiter: Array<StarredDto> = [];
         for(let cont = 0; cont < limiter && starredDtoList.length > 0; cont++){
             starredlistLimiter.push(starredDtoList[cont]);

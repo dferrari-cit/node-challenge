@@ -1,5 +1,7 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { HttpStatus, Injectable } from "@nestjs/common";
 import { request } from "@octokit/request";
+import { InternalServerError } from "../exception/internal-server-error.exception";
+import { UserNotFound } from "../exception/user-not-found.exception";
 import { StarredDto } from "../adapter/starred.dto";
 import { UserDto } from "../adapter/user.dto";
 import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
@@ -17,17 +19,11 @@ export class UserService {
             const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
             return [userDto, starredDto];
         } catch (error) {
-            if (error.status === 404) {
-                throw new HttpException({
-                    status: HttpStatus.NOT_FOUND,
-                    error: 'User not found!',
-                }, HttpStatus.NOT_FOUND);
-            } else if (error.status === 500) {
-                throw new HttpException({
-                    status: HttpStatus.INTERNAL_SERVER_ERROR,
-                    error: 'Cannot establish connection with GitHub.',
-                }, HttpStatus.INTERNAL_SERVER_ERROR);
-            }
+            if (error.status === HttpStatus.NOT_FOUND) {
+                throw new UserNotFound('User not found!');
+            }else{
+                throw new InternalServerError('Cannot establish connection with GitHub API.');
+            } 
         }
     }
     private async listStarreds(userName: string): Promise<Array<StarredDto>> {

@@ -6,6 +6,7 @@ import { UserMapper } from "../mapper/user.model.mapper";
 import { UserService } from "../service/user.service";
 
 @Module({
+    imports: [],
     controllers: [UserController],
     providers: [UserMapper, UserDtoMapper, StarredDtoMapper, UserService]
 })

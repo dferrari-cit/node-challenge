@@ -10,11 +10,14 @@ describe('StarredDtoMapper', () => {
         starredDtoMapper = new StarredDtoMapper();
         responseStarredDto = ResponseStarredMock;
     });
-
     describe('responseToDto', () => {
         it('should return an array of StarredDto', () => {
             starredDto = starredDtoMapper.responseToDto(responseStarredDto);
             expect(starredDto[0]).toBeInstanceOf(StarredDto);
+        });
+        it('StarredDto should have a maximun five positions on your array', () => {
+            starredDto = starredDtoMapper.responseToDto(responseStarredDto);
+            expect(starredDto.length).toBeLessThanOrEqual(5);
         });
     });
 });

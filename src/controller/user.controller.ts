@@ -9,7 +9,7 @@ import { UserService } from "../service/user.service";
 @ApiTags('gitHub-User')
 export class UserController {
     constructor(private userService: UserService,
-        private userMapper: UserMapper,) { }
+        private userMapper: UserMapper) { }
     @Get(':user')
     @ApiOperation({ summary: 'GitHub User Name', description:'Show data for valid user.', operationId:'UserName'})
     @ApiResponse({ status: 200, description: 'Successful!', type: UserModel })

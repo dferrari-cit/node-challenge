@@ -1,4 +1,4 @@
-import { StarredDto } from "../../adapter/starred.dto";
+import { StarredDto } from "../../../src/adapter/starred.dto";
 
 export const ResponseStarreMock = [
     new StarredDto(
