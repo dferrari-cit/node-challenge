@@ -13,6 +13,7 @@ async function bootstrap() {
     .setLicense('GPL Licence', 'http://www.gnu.org/licenses/gpl.html')
     .setExternalDoc('READ-ME', 'https://github.com/dferrari-cit/node-challenge/tree/TIME-DOS-MAIS-QUE-LEGAIS#readme')
     .addTag('gitHub-User')
+    .addTag('Search-Registry')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

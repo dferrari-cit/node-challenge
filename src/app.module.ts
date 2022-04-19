@@ -1,8 +1,14 @@
 import { Module } from '@nestjs/common';
 import { UserModule } from './controller/user.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { RegistryModule } from './registry/registry.module';
 
 @Module({
-  imports: [UserModule],
+  imports: [
+    MongooseModule.forRoot('mongodb+srv://node_challenge_devops:devops_123@cluster0.vlh0o.mongodb.net/resgistrysDatabase?retryWrites=true&w=majority'),
+    UserModule,
+    RegistryModule
+  ],
   controllers: [],
   providers: [],
 })
