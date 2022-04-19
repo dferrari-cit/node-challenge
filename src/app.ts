@@ -9,7 +9,7 @@ import swaggerDocs from "./swagger.json";
 import { statusMonitor } from './util/monitor';
 
 const app = express();
-
+app.set('json spaces',2);
 app.use(cors());
 app.use(express.json());
 app.use(router);
