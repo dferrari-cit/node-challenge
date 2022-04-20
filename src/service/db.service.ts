@@ -18,7 +18,7 @@ export class DBService {
     }
 
     async getByDate(data: string) {
-        return this.registryModel.find({ searchedData: {$regex: data} }).exec();
+        return this.registryModel.find({ searchedDate: {$regex: data} }).exec();
 
     }
 

@@ -1,5 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { Controller, Get, Param } from "@nestjs/common";
+import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { Registry } from "../model/registry.model";
 import { DBService } from "../service/db.service";
 
@@ -11,18 +11,25 @@ export class RegistryController {
         private registryService: DBService
     ) { }
 
+
     @Get()
+    @ApiOperation({ description: 'Show all search registries.' })
+    @ApiResponse({ status: 200, description: 'Successful!', type: Registry, isArray: true })
     async getAll(): Promise<Registry[]> {
         return this.registryService.getAll();
     }
 
     @Get('name/:searchedName')
+    @ApiOperation({ summary: 'GitHub User Name.', description: 'Search registries by user name.'})
+    @ApiResponse({ status: 200, description: 'Successful!', type: Registry, isArray: true })
     async getByName(@Param('searchedName') userName: string): Promise<any> {
         return this.registryService.getByName(userName);
     }
 
-    @Get('data/:searchedData')
-    async getBydate(@Param('searchedData') searchedData: string): Promise<any> {
+    @Get('data/:searchedDate')
+    @ApiOperation({ summary: 'Date of search.', description: 'Search registries by date.' })
+    @ApiResponse({ status: 200, description: 'Successful!', type: Registry, isArray: true })
+    async getBydate(@Param('searchedDate') searchedData: string): Promise<any> {
         return this.registryService.getByDate(searchedData);
     }
 

@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from "@nestjs/common";
-import { ApiOperation, ApiParam, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { Registry } from "../model/registry.model";
 import { DBService } from "../service/db.service";
 import { UserMapper } from "../mapper/user.model.mapper";
@@ -13,8 +13,8 @@ export class UserController {
     constructor(private userService: UserService,
         private userMapper: UserMapper,
         private registryService: DBService) { }
-    
-        @Get(':user')
+
+    @Get(':user')
     @ApiOperation({ summary: 'GitHub User Name', description: 'Show data for valid user.', operationId: 'UserName' })
     @ApiResponse({ status: 200, description: 'Successful!', type: UserModel })
     @ApiResponse({
@@ -54,7 +54,7 @@ export class UserController {
         const registry = new Registry();
         const currentData = new Date();
         registry.searchedName = user;
-        registry.searchedData = currentData.toString().slice(0, 21).replace(/ /g, '-');
+        registry.searchedDate = currentData.toString().slice(0, 21).replace(/ /g, '-');
         this.registryService.create(registry);
 
         return result;
