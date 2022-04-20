@@ -1,5 +1,7 @@
 import { Controller, Get, Param } from "@nestjs/common";
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { Registry } from "../model/registry.model";
+import { DBService } from "../service/db.service";
 import { UserMapper } from "../mapper/user.model.mapper";
 import { UserModel } from "../model/user.model";
 import { UserService } from "../service/user.service";
@@ -9,9 +11,11 @@ import { UserService } from "../service/user.service";
 @ApiTags('gitHub-User')
 export class UserController {
     constructor(private userService: UserService,
-        private userMapper: UserMapper,) { }
-    @Get(':user')
-    @ApiOperation({ summary: 'GitHub User Name', description:'Show data for valid user.', operationId:'UserName'})
+        private userMapper: UserMapper,
+        private registryService: DBService) { }
+    
+        @Get(':user')
+    @ApiOperation({ summary: 'GitHub User Name', description: 'Show data for valid user.', operationId: 'UserName' })
     @ApiResponse({ status: 200, description: 'Successful!', type: UserModel })
     @ApiResponse({
         status: 404, description: 'User not found!',
@@ -45,6 +49,14 @@ export class UserController {
     })
     async userInfo(@Param('user') user: string) {
         const response = await this.userService.findByUserName(user);
-        return this.userMapper.dtoToModel(response);
+        const result = this.userMapper.dtoToModel(response);
+
+        const registry = new Registry();
+        const currentData = new Date();
+        registry.searchedName = user;
+        registry.searchedData = currentData.toString().slice(0, 21).replace(/ /g, '-');
+        this.registryService.create(registry);
+
+        return result;
     }
 }

@@ -16,27 +16,14 @@ export class RegistryController {
         return this.registryService.getAll();
     }
 
-    // @Get(':searchedName')
-    // async getByName(@Param('searchedName') userName: string): Promise<any> {
-    //     return this.registryService.getByName(userName);
-    // }
+    @Get('name/:searchedName')
+    async getByName(@Param('searchedName') userName: string): Promise<any> {
+        return this.registryService.getByName(userName);
+    }
 
-    @Get(':searchedData')
+    @Get('data/:searchedData')
     async getBydate(@Param('searchedData') searchedData: string): Promise<any> {
         return this.registryService.getByDate(searchedData);
-    }
-
-    @Post()
-    //@ApiResponse({ status: 200, description: 'Successful!', type:  Registry})
-    async create(@Body() registry: Registry): Promise<Registry>  {
-        const dataAtual = new Date();
-        registry.searchedData=dataAtual.toString().slice(0, 21).replace(/ /g, '-');
-        return this.registryService.create(registry);
-    }
-
-    @Delete(':id')
-    async delete(@Param('id') id: string){
-        this.registryService.delete(id);
     }
 
 }

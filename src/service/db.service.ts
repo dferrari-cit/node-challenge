@@ -1,12 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { Registry } from "../model/registry.model";
+import { Registry, RegistryDocument } from "../model/registry.model";
 
 
 @Injectable()
 export class DBService {
-    constructor(@InjectModel('Registry') private readonly registryModel: Model<Registry>) { }
+    constructor(@InjectModel('Registry') private readonly registryModel: Model<RegistryDocument>) { }
 
     async getAll() {
         return this.registryModel.find().exec();
@@ -25,10 +25,6 @@ export class DBService {
     async create(registry: Registry) {
         const createdRegistry = new this.registryModel(registry);
         return createdRegistry.save();
-    }
-
-    delete(id: string) {
-        return this.registryModel.deleteOne({ _id: id }).exec();
     }
 }
 
