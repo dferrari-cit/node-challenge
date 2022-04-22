@@ -21,8 +21,8 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/102744463/163205681-eb2c8c80-0f38-4a54-9b62-f5ea6a206b0d.png"/>
 </p>
-## Diagrama Estático
 
+## Diagrama Estático
 <img src ="https://user-images.githubusercontent.com/102745212/164721916-3e05ca7a-9805-4bbe-bdda-5ae1d156254a.jpg" />
 
 ## Desenho da arquitetura de código
