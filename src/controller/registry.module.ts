@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { RegistrySchema } from "../adapter/registry.schema";
+import { RegistryDtoMapper } from "../mapper/registry.dto.mapper";
+import { RegistrySchema } from "../model/registry.model";
 import { DBService } from "../service/db.service";
 import { RegistryController } from "./registry.controller";
 
@@ -9,6 +10,6 @@ import { RegistryController } from "./registry.controller";
         MongooseModule.forFeature([{ name: 'Registry', schema: RegistrySchema }])
     ],
     controllers: [RegistryController],
-    providers: [DBService]
+    providers: [DBService, RegistryDtoMapper]
 })
 export class RegistryModule { }
