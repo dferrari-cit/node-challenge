@@ -1,24 +1,26 @@
-<div class="container">
-    <div class="card-login rounded">
+<div class="welcome-card">
+    <h1>Bem vindo ao GitHub USER</h1>
+    <div class="container">
+        <div class="card-login rounded">
 
-        <form class="form forms" [formGroup]="userGitForm" (submit)="search()">
-            
-            <div class="form-group">
-                <input
-                    #userNameInput formControlName="userNameForm"
-                    class="form-control text-center my-input" 
-                    placeholder="user name" 
-                    autofocus>
-            </div>
+            <form class="form forms" [formGroup]="userGitForm" (submit)="search()">
 
-            <button
-                [disabled]="userGitForm.invalid"
-                type="submit" 
-                class="btn btn-success btn-block ms-2 but">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </button>            
-        </form>
+                <div class="form-group">
+                    <input #userNameInput formControlName="userNameForm" class="form-control text-center my-input"
+                        placeholder="user name" autofocus>
+                </div>
+
+                <button [disabled]="userGitForm.invalid" type="submit" class="btn btn-success btn-block ms-2 but">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 
-<app-info-user [userInput]="userT" ></app-info-user>
+<p class="welcome-info">
+    Digite na barra superior o usuário GitHub desejado, para obter<br> suas informações pessoais e Repositórios
+    Favoritados.
+</p>
+
+<app-info-user [userInput]="userT"></app-info-user>

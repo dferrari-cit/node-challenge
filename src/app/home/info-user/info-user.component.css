@@ -1,10 +1,13 @@
+.div-group{
+    display: inline-block;
+}
+
 .container {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
     align-items: center;  
     margin-top: 40px;
-    
 }
 
 .cards{ 
@@ -13,57 +16,71 @@
 }
 
 .card-user {
-    background-color: #ededed;
-    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);    
-    display: flex;
-    flex-direction: row; 
+    /* box-shadow: 0 1px 5px rgb(0 0 0 / 20%);     */
+    /* display: flex; */
+    /* flex-direction: row; 
     align-items: center;   
-    justify-content: center;
-    width: 495px;  
+    justify-content: center; */
+    width: 300px;  
+    margin-left: 40%;
+    /* margin-bottom: 100%; */
 }
 
 .avatar {
-    width: 150px;
+    width: 200px;
 }
 
 .avatar img {
-    width: 145px;
+    width: 180px;
+    margin-bottom: 10px;
+    border-radius: 20px;
 }
 
 .infos {
-    align-items: initial;
-    display: flex;    
     font-family: Source Sans Pro, sans-serif;
     font-size: 16px;
-    flex-direction: column;
-    justify-content: space-between;    
     width: 310px;
+    display: flex;    
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;    
 }
 
 .info {
-    border-bottom: 1px solid #d9d9d9;
-    display: flex;
-    justify-content: inherit;
-    align-items: center;
-    height: 50px;
-    width: 100%;
-    
-}
-
-.info label {
-    color: #6156ff;;
+    color: white;
+    border-bottom: 1px solid #d9d9d936;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-left: 10px;
+    height: 100px;
+    margin-top: 8%;
+    width: 90%;
+}
+
+.info-url{
+    color: #009b22;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info label {
+    color: #009b22;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    margin-top: 8%;
 }
 
 .card-table {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 50%;
+    margin-left: 20%;
 }
 
 .table__title {
@@ -82,7 +99,8 @@
 
 .title__tex caption {
     font-size: 20px;
-    color: #3d3e40;
+    color: white;
+    margin-left: 90%;
 }
 
 .content__table { 
@@ -94,7 +112,7 @@
     overflow: hidden;
     font-family: Source Sans Pro, sans-serif;
     margin-top: 0;
-    width: 100%;    
+    width: 1000px;   
 }
 
 tr td, tr th {
@@ -116,6 +134,7 @@ tr td, tr th {
     font-size: 14px;
     height: 50px;
     line-height: 14px;    
+    backdrop-filter: drop-shadow(4px 4px 10px blue);
 }
 
 .table__tdoby tr {
@@ -130,6 +149,10 @@ tr td, tr th {
 
 .table__tdoby :hover {
     background-color: #272c31;
+}
+
+.info-url{
+    text-decoration: none;
 }
 
 .stars {

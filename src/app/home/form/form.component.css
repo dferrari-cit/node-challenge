@@ -1,3 +1,9 @@
+h1{
+    color: white;
+    font-size: 55px;
+    text-align: center;
+    padding-top: 10%;
+}
 
 .container {
     display: flex;
@@ -8,13 +14,11 @@
 
 .card-login {
     align-items: center;
-    background-color: #212529;
-    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
     display: flex;
     flex-direction: column;    
     margin: 0px auto auto;
     padding: 11px;
-    width: 45%;
+    margin-top: 5%;
 }
 
 .forms {
@@ -23,12 +27,38 @@
     align-items: center;
     justify-content: center;
 }
+
 .my-input {
     height: 45px;
+    width: 300px;
+    box-shadow: 0 6px 5px rgb(0 0 0 / 50%);
+}
+
+.my-input:focus{
+    border-color: white;
 }
 
 .but {
     height: 48px;
+}
+
+.btn-success{
+    box-shadow: 0 6px 5px rgb(0 0 0 / 50%);
+}
+
+.welcome-card{
+    height: 500px;
+    padding-top: 2%;
+    background-color: #c4c4c425;
+}
+
+.welcome-info{
+    font-size: 21px;
+    color: white;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    text-align: center;
+    line-height: 1.2;
 }
 
 ::ng-deep .custom-style{
