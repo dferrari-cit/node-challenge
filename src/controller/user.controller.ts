@@ -22,14 +22,22 @@ export class UserController {
         status: 404, description: 'User not found!',
         schema: {
             properties: {
-                status: {
+                statusCode: {
                     type: "number",
                     example: '404'
                 },
-                error: {
+                message: {
                     type: "string",
                     example: 'User not found!'
-                }
+                },
+                timestamp: {
+                    type: "string",
+                    example: '2000-01-10T13:00:00.055Z'
+                },
+                path: {
+                    type: "string",
+                    example: '/user/fulano00876'
+                },
             }
         }
     })
@@ -37,14 +45,22 @@ export class UserController {
         status: 500, description: 'Internal Server Error',
         schema: {
             properties: {
-                status: {
+                statusCode: {
                     type: "number",
                     example: '500'
                 },
-                error: {
+                message: {
                     type: "string",
-                    example: 'Cannot establish connection with GitHub.'
-                }
+                    example: 'Cannot establish connection with GitHub API.'
+                },
+                timestamp: {
+                    type: "string",
+                    example: '2000-01-10T13:00:00.055Z'
+                },
+                path: {
+                    type: "string",
+                    example: '/user/fulano00876'
+                },
             }
         }
     })
