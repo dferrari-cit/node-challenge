@@ -10,10 +10,10 @@ import { UserService } from "../service/user.service";
 import { RegistryDtoMapper } from "../mapper/registry.dto.mapper";
 
 @Module({
-    imports:[
+    imports: [
         MongooseModule.forFeature([{ name: 'Registry', schema: RegistrySchema }])
     ],
     controllers: [UserController],
     providers: [UserMapper, UserDtoMapper, StarredDtoMapper, UserService, DBService, RegistryDtoMapper]
 })
-export class UserModule {}
+export class UserModule { }

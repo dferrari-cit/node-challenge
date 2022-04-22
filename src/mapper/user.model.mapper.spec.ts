@@ -1,8 +1,8 @@
 import { StarredDto } from "../adapter/starred.dto";
 import { UserDto } from "../adapter/user.dto";
 import { UserModel } from "../model/user.model";
-import { ResponseStarreMock } from "../service/mocks/response-starred-dto.mock";
-import { ResponseUserMock } from "../service/mocks/response-user-dto.mock";
+import { ResponseStarreMock } from "../../test/service/mocks/response-starred-dto.mock";
+import { ResponseUserMock } from "../../test/service/mocks/response-user-dto.mock";
 import { UserMapper } from "./user.model.mapper";
 
 describe('UserMapper', () => {

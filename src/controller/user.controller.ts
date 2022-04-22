@@ -10,7 +10,8 @@ import { UserService } from "../service/user.service";
 @Controller('user')
 @ApiTags('gitHub-User')
 export class UserController {
-    constructor(private userService: UserService,
+    constructor(
+        private userService: UserService,
         private userMapper: UserMapper,
         private registryService: DBService) { }
 

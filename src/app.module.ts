@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
+import { APP_FILTER } from '@nestjs/core';
 import { UserModule } from './controller/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { RegistryModule } from './controller/registry.module';
+import { HttpExceptionFilter } from './filter/exception.filter';
 
 @Module({
   imports: [
@@ -10,6 +12,11 @@ import { RegistryModule } from './controller/registry.module';
     RegistryModule
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_FILTER,
+      useClass: HttpExceptionFilter
+    }
+  ],
 })
-export class AppModule {}
+export class AppModule { }
