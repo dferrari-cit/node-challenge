@@ -60,12 +60,16 @@ export class FormComponent implements OnInit {
     }
     if(response.urlUser == null){
       response.urlUser = '...'
+    }else{
+      response.urlUser = "https://github.com/" + response.urlUser.slice(29, )
     }
     if(response.starredList.length > 0){
-      for(let i=0; i<5; i++){
-        let repository = response.starredList[i].urlRepository;
-        response.starredList[i].urlRepository = "https://github.com/" + repository.slice(29, )
-      }
+      response.starredList.forEach(element => {
+        let repository = element.urlRepository;
+        element.urlRepository = "https://github.com/" + repository.slice(29, )
+      })
+        
+      
     }
 
     this.userT = response;
