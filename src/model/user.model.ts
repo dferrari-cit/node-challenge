@@ -1,4 +1,3 @@
-import { Schema } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { StarredModel } from './starred.model';
 export class UserModel {

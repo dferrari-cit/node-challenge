@@ -1,61 +1,82 @@
-import { Test } from '@nestjs/testing';
 import { UserModel } from '../model/user.model';
 import { UserMapper } from '../mapper/user.model.mapper';
 import { UserService } from "../service/user.service";
 import { UserController } from "./user.controller";
+import { DBService } from '../service/db.service';
+import { RegistryDtoMapper } from '../mapper/registry.dto.mapper';
+import { UserDtoMapper } from '../mapper/user-dto.mapper';
+import { StarredDtoMapper } from '../mapper/starred-dto.mapper';
+import { Registry, RegistryDocument } from "../model/registry.model";
+import { Model } from "mongoose";
+import { UserDto } from '../adapter/user.dto';
 
-
-const userModel: UserModel = new UserModel('avatar', 'name', 'bio', 'urlUser', [])
 
 describe('UserController', () => {
     let userController: UserController;
     let userService: UserService;
+    let userDtoMapper: UserDtoMapper;
+    let starredDtoMapper: StarredDtoMapper;
+    let userMapper: UserMapper
+    let registryDtoMapper: RegistryDtoMapper;
+    let registryModel: Model<RegistryDocument>;
+    let dbService: DBService;
 
-    beforeEach(async () => {
-        const moduleRef = await Test.createTestingModule({
-            controllers: [UserController],
-            providers: [{
-                provide: UserService,
-                useValue: {
-                    findByUserName: jest.fn()
-                }
-            },
-            {
-                provide: UserMapper,
-                useValue: {
-                    dtoToModel: jest.fn().mockResolvedValue(userModel),
-                    dtoListToModelList: jest.fn()
-                }
-            }]
-        }).compile();
+    let userModel: UserModel = new UserModel('avatar', 'name', 'bio', 'urlUser', [])
+    let registry = new Registry(userModel.name);
+    let dbCreateResponse: Promise<any> = new Promise(() => { registry });
 
-        userController = moduleRef.get<UserController>(UserController);
-        userService = moduleRef.get<UserService>(UserService);
+    beforeEach(() => {
+        userDtoMapper = new UserDtoMapper();
+        starredDtoMapper = new StarredDtoMapper();
+        userService = new UserService(userDtoMapper, starredDtoMapper);
+        userMapper = new UserMapper();
+        dbService = new DBService(registryDtoMapper, registryModel);
+        userController = new UserController(userService, userMapper, dbService);
     });
 
-    it('shoud be defined', () => {
+    it('should be defined', () => {
         expect(userController).toBeDefined();
         expect(userService).toBeDefined();
+        expect(dbService).toBeDefined();
     });
 
     describe('userInfo', () => {
-        it('shoud return user infos', async () => {
+        it('should return user infos', async () => {
             // Arrange
-            const user = '';
+            let userName = userModel.name;
+            let userDto: UserDto = new UserDto('avatar', 'urlUser', 'starredUrl', 'name', 'bio')
+
+            jest.spyOn(userService, 'findByUserName').mockResolvedValue([userDto, []]);
+            jest.spyOn(dbService, 'create').mockImplementation(() => dbCreateResponse);
+
             // Act
-            const result = await userController.userInfo(user);
+            let result = await userController.userInfo(userName);
+
             // Assert
             expect(userService.findByUserName).toBeCalledTimes(1);
             expect(result).toBeInstanceOf(UserModel);
             expect(result).toEqual(userModel);
         });
 
-        it('shoud throw Error', () => {
+        it('should throw Error', () => {
             // Arreange
             jest.spyOn(userService, 'findByUserName').mockRejectedValueOnce(new Error());
 
             // Assert
-            expect(userController.userInfo('')).rejects.toThrowError();
+            expect(userController.userInfo(userModel.name)).rejects.toThrowError();
         });
+
+        it('should create a registry persistence in data base', () => {
+            // Arreange
+            jest.spyOn(dbService, 'create').mockImplementation(() => dbCreateResponse);
+
+            // Act
+            let result = dbService.create(registry);
+
+            // Assert
+            expect(dbService.create).toBeCalledTimes(1);
+            expect(dbCreateResponse).toEqual(result);
+        });
+
     });
 });
