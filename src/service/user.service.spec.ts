@@ -6,10 +6,10 @@ import { UserDto } from "../adapter/user.dto";
 import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
 import { UserDtoMapper } from "../mapper/user-dto.mapper";
 import { UserService } from "./user.service";
-import { UsersService } from "../local-data-base-users/users.service";
-import { UsersRepository } from "../local-data-base-users/users.repository";
+import { UsersService } from "../local-data-base-users/local-db.service";
+import { UsersRepository } from "../local-data-base-users/local-db.repository";
 import { Model } from "mongoose";
-import { Users, UsersDocument } from "../local-data-base-users/users.schema";
+import { Users, UsersDocument } from "../local-data-base-users/lodal-db.schema";
 
 describe('UserService', () => {
     const userDtoMapper = new UserDtoMapper();

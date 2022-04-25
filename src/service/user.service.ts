@@ -6,7 +6,7 @@ import { StarredDto } from "../adapter/starred.dto";
 import { UserDto } from "../adapter/user.dto";
 import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
 import { UserDtoMapper } from "../mapper/user-dto.mapper";
-import { UsersService } from "../local-data-base-users/users.service";
+import { UsersService } from "../local-data-base-users/local-db.service";
 import { UnauthorizedRequest } from "../exception/unauthorized-request.exception";
 @Injectable()
 export class UserService {

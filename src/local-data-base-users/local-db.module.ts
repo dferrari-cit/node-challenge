@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
-import { UsersRepository } from "./users.repository";
-import { Users, UserSchema } from "./users.schema";
-import { UsersService } from "./users.service";
+import { UsersRepository } from "./local-db.repository";
+import { Users, UserSchema } from "./lodal-db.schema";
+import { UsersService } from "./local-db.service";
 
 @Module({
     imports:[
