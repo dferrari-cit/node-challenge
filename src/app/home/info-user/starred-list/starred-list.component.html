@@ -1,0 +1,35 @@
+<div class="div-group">
+    <div class="cards card-table rounded">
+        <div class="table__title">
+            <div class="title__tex">
+                <caption>Top #5 - Favorite Repositories</caption>
+            </div>
+        </div>
+        <table aria-describedby="table of starred list" class="content__table">
+            <thead class="table__thead">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">flagType</th>
+                    <th scope="col" class="text-center">Git</th>
+                </tr>
+            </thead>
+            <tbody class="table__tdoby" *ngFor="let starredOne of starredListArray">
+                <tr>
+                    <td>{{starredList.name}}</td>
+                    <td>{{starredList.description}}</td>
+                    <td class="text-center">{{starredList.flagType}}</td>
+                    <td>
+                       <button class="btn">
+                            <a class="eyes" href="{{starredList.urlRepository}}" target="_blank">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                       </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="no-starred mt-4" *ngIf="starredListArray.length == 0">
+            <p>No exist favorite repositories...</p>
+        </div>
+    </div>
+</div>

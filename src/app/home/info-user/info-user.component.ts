@@ -9,7 +9,6 @@ import { User } from 'src/app/interfaces/user';
 export class InfoUserComponent implements OnInit {
 
   @Input() userInput: User = {'avatar': '', 'bio': '', 'name': '', 'starredList': [], 'urlUser': ''};
-  contator: number = 0;
   
   constructor() { 
   
@@ -19,6 +18,5 @@ export class InfoUserComponent implements OnInit {
   }
 
   addCont(){
-    this.contator += 1;
   }
 }
