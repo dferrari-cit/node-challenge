@@ -8,9 +8,9 @@ import { UserDtoMapper } from "../mapper/user-dto.mapper";
 import { UserMapper } from "../mapper/user.model.mapper";
 import { UserService } from "../service/user.service";
 import { RegistryDtoMapper } from "../mapper/registry.dto.mapper";
-import { Users, UserSchema } from "src/local-data-base-users/users.schema";
-import { UsersService } from "src/local-data-base-users/users.service";
-import { UsersRepository } from "src/local-data-base-users/users.repository";
+import { UsersService } from "src/local-data-base-users/local-db.service";
+import { Users, UserSchema } from "src/local-data-base-users/lodal-db.schema";
+import { UsersRepository } from "src/local-data-base-users/local-db.repository";
 
 @Module({
     imports: [
