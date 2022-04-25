@@ -6,21 +6,35 @@ import { StarredDto } from "../adapter/starred.dto";
 import { UserDto } from "../adapter/user.dto";
 import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
 import { UserDtoMapper } from "../mapper/user-dto.mapper";
+import { UsersService } from "../local-data-base-users/users.service";
+import { UnauthorizedRequest } from "../exception/unauthorized-request.exception";
 @Injectable()
 export class UserService {
-    constructor(private userDtoMapper: UserDtoMapper, private starredDtoMapper: StarredDtoMapper) { }
+    constructor(private userDtoMapper: UserDtoMapper, private starredDtoMapper: StarredDtoMapper,
+        private dbLocalService: UsersService) { }
     async findByUserName(userName: string): Promise<[UserDto, Array<StarredDto>]> {
+        let result: [UserDto, StarredDto[]] | any;
         try {
-            const response = await request({
+                result = await request({
                 method: "GET",
                 url: "/users/" + userName
+            }).then(async result => {
+                const userDto: UserDto = this.userDtoMapper.responseToDto(result);
+                const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
+                this.dbLocalService.createUser([userDto, starredDto])
+                return [userDto, starredDto];
+
+            }).catch(error => {
+                if(error.status !== HttpStatus.NOT_FOUND){
+                    return this.dbLocalService.findUser(userName);
+                }
             });
-            const userDto: UserDto = this.userDtoMapper.responseToDto(response);
-            const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
-            return [userDto, starredDto];
+            return result;
         } catch (error) {
             if (error.status === HttpStatus.NOT_FOUND) {
                 throw new UserNotFound('User not found!');
+            }else if(error.status === HttpStatus.FORBIDDEN){
+                throw new UnauthorizedRequest('Requisition limit exceeded');
             }else{
                 throw new InternalServerError('Cannot establish connection with GitHub API.');
             } 

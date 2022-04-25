@@ -71,7 +71,8 @@
       "jestGlobalMocks.ts",
       ".module.ts",
       "main.ts",
-      ".mock.ts"
+      ".mock.ts",
+      "exception"
     ],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",

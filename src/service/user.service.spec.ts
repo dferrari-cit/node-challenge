@@ -6,18 +6,27 @@ import { UserDto } from "../adapter/user.dto";
 import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
 import { UserDtoMapper } from "../mapper/user-dto.mapper";
 import { UserService } from "./user.service";
-import { request } from "@octokit/request";
+import { UsersService } from "../local-data-base-users/users.service";
+import { UsersRepository } from "../local-data-base-users/users.repository";
+import { Model } from "mongoose";
+import { Users, UsersDocument } from "../local-data-base-users/users.schema";
 
 describe('UserService', () => {
     const userDtoMapper = new UserDtoMapper();
     const starredDtoMapper = new StarredDtoMapper();
-    const userService = new UserService(userDtoMapper, starredDtoMapper);
+    let userDocument: Model<UsersDocument>;
+    const repository = new UsersRepository(userDocument);
+    const db = new UsersService(repository);
+    const userService = new UserService(userDtoMapper, starredDtoMapper, db);
     beforeEach(() => {
         jest.spyOn(userDtoMapper, 'responseToDto').mockImplementation(() => {
             return new UserDto('test','test','test','test','test');
         });
         jest.spyOn(starredDtoMapper, 'responseToDto').mockImplementation(() => {
             return [new StarredDto('test','test','test','test')];
+        });
+        jest.spyOn(db, 'createUser').mockImplementation(() => {
+            return new Promise(() => new Users());
         });
     });
     it('shoud be defined', () => {
@@ -34,10 +43,11 @@ describe('UserService', () => {
                 new StarredDto('test','test','test','test')
                ]
             ];
-            const request = jest.fn(async (urlTest: string) => 'test');
+            const request = jest.fn();
+            request.mockImplementation((urlTest: string) => 'test');
            expect(await userService.findByUserName('test')).toEqual(result);
        }); 
-       it('should throw HttpException', async () => {
+       it('should throw HttpException not found user',async() => {
             jest.spyOn(userDtoMapper, 'responseToDto').mockImplementation(() => {
                 throw new HttpException('User not found!', HttpStatus.NOT_FOUND);
             });
@@ -45,7 +55,7 @@ describe('UserService', () => {
                 expect(error).toBeInstanceOf(UserNotFound);
             });
         });
-        it('should throw HttpException', async () => {
+        it('should throw HttpException internal server error', async () => {
             jest.spyOn(userDtoMapper, 'responseToDto').mockImplementation(() => {
                 throw new HttpException('Internal server error', HttpStatus.INTERNAL_SERVER_ERROR);
             });
