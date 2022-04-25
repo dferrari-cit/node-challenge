@@ -52,3 +52,12 @@ Projeto desenvolvido para Coding Challenge, com o objetivo de desenvolver uma pe
 <img src="https://user-images.githubusercontent.com/100810006/162437504-b4079c6c-31ae-4b41-96c6-d8084d7d9c1a.jpg" width=70/>
 <img src="https://user-images.githubusercontent.com/100810006/162437515-a3d98e59-1ee2-4e21-b312-609ef15915cd.jpg" width=70/>
 </div> 
+
+
+docker exec -it mongo-database bash
+mongo
+use admin
+db.auth('root', passwordPrompt())
+digita example como senha
+use bancoMongo
+db.createCollection("bancoMongo")
