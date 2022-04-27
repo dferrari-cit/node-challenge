@@ -9,6 +9,9 @@ import { StarredDtoMapper } from '../mapper/starred-dto.mapper';
 import { Registry, RegistryDocument } from "../model/registry.model";
 import { Model } from "mongoose";
 import { UserDto } from '../adapter/user.dto';
+import { UsersRepository } from '../local-data-base-users/local-db.repository';
+import { UsersDocument } from '../local-data-base-users/lodal-db.schema';
+import { UsersService } from '../local-data-base-users/local-db.service';
 
 
 describe('UserController', () => {
@@ -20,15 +23,20 @@ describe('UserController', () => {
     let registryDtoMapper: RegistryDtoMapper;
     let registryModel: Model<RegistryDocument>;
     let dbService: DBService;
+    let userDocument: Model<UsersDocument>;
+    let dbLocalService: UsersService;
 
     let userModel: UserModel = new UserModel('avatar', 'name', 'bio', 'urlUser', [])
     let registry = new Registry(userModel.name);
     let dbCreateResponse: Promise<any> = new Promise(() => { registry });
+    let repository = new UsersRepository(userDocument);
+
 
     beforeEach(() => {
         userDtoMapper = new UserDtoMapper();
         starredDtoMapper = new StarredDtoMapper();
-        userService = new UserService(userDtoMapper, starredDtoMapper);
+        dbLocalService = new UsersService(repository);
+        userService = new UserService(userDtoMapper, starredDtoMapper, dbLocalService);
         userMapper = new UserMapper();
         dbService = new DBService(registryDtoMapper, registryModel);
         userController = new UserController(userService, userMapper, dbService);

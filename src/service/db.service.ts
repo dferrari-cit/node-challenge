@@ -9,28 +9,27 @@ import { Registry, RegistryDocument } from "../model/registry.model";
 @Injectable()
 export class DBService {
     constructor(
-        private registyDtoMapper: RegistryDtoMapper,
+        private registryDtoMapper: RegistryDtoMapper,
         @InjectModel('Registry') private readonly registryModel: Model<RegistryDocument>
     ) { }
 
     async getAll(): Promise<Array<RegistryDto>> {
         const response = await this.registryModel.find().exec();
-        return this.registyDtoMapper.responseToDto(response);
+        return this.registryDtoMapper.responseToDto(response);
     }
 
     async getByName(name: string): Promise<Array<RegistryDto>> {
         const response = await this.registryModel.find({ searchedName: name }).exec();
-        return this.registyDtoMapper.responseToDto(response);
+        return this.registryDtoMapper.responseToDto(response);
     }
 
     async getByDate(data: string): Promise<Array<RegistryDto>> {
         const response = await this.registryModel.find({ searchedDate: { $regex: data } }).exec();
-        return this.registyDtoMapper.responseToDto(response);
+        return this.registryDtoMapper.responseToDto(response);
     }
 
     async create(registry: Registry) {
-        const createdRegistry = new this.registryModel(registry);
-        return createdRegistry.save();
+        return new this.registryModel(registry).save();
     }
 }
 
