@@ -13,7 +13,7 @@ export class UserService {
     }
 
 
-    verify(userName: string){
+    findUser(userName: string){
         return this.http.get<User>(this.apiUrl + userName);
     }
     

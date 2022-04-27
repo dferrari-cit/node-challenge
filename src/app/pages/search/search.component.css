@@ -1,0 +1,17 @@
+.content {
+    margin-top: 80px;
+}
+
+.contains {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contains__infos-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}

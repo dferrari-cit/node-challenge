@@ -14,14 +14,14 @@
                     <th scope="col" class="text-center">Git</th>
                 </tr>
             </thead>
-            <tbody class="table__tdoby" *ngFor="let starredOne of starredListArray">
+            <tbody class="table__tdoby" *ngFor="let starredElement of starredListArray">
                 <tr>
-                    <td>{{starredList.name}}</td>
-                    <td>{{starredList.description}}</td>
-                    <td class="text-center">{{starredList.flagType}}</td>
+                    <td>{{starredElement.name}}</td>
+                    <td>{{starredElement.description}}</td>
+                    <td class="text-center">{{starredElement.flagType}}</td>
                     <td>
                        <button class="btn">
-                            <a class="eyes" href="{{starredList.urlRepository}}" target="_blank">
+                            <a class="eyes" href="{{starredElement.urlRepository}}" target="_blank">
                                 <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                        </button>
                     </td>

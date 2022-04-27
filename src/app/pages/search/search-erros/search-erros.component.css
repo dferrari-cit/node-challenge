@@ -1,0 +1,25 @@
+.content {
+    margin-top: 80px;
+}
+
+.contains {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contains__infos-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.erros-icon {
+    font-size: 50px;
+}
+
+.contains__infos-user p {
+    font-size: 25px;
+    font-weight: bold;
+}

@@ -1,10 +1,6 @@
-.div-group{
-    display: inline-block;
-}
 
 .container {
-    align-items: center;  
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .cards{ 
@@ -13,8 +9,8 @@
 }
 
 .card-user {
-    width: 300px;  
-    margin-left: 40%;
+    width: 270px;
+    padding-top: 35px;
 }
 
 .avatar {
@@ -22,19 +18,18 @@
 }
 
 .avatar img {
-    width: 180px;
+    width: 150px;
     margin-bottom: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .infos {
     font-family: Source Sans Pro, sans-serif;
     font-size: 16px;
-    width: 310px;
     display: flex;    
-    align-items: center;
+    
     flex-direction: column;
-    justify-content: start;    
+    width: 100%;
 }
 
 .info {
@@ -43,8 +38,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 100px;
-    margin-top: 8%;
+    height: 70px;
+    margin-top: 20px;
     width: 90%;
 }
 
@@ -57,13 +52,19 @@
 
 .info label {
     color: #009b22;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
     display: flex;
-    align-items: start;
-    justify-content: start;
     margin-top: 8%;
+}
+
+.info__bio {
+    max-height: 16ch;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
 }
 
 .card-table {
@@ -73,13 +74,6 @@
     width: 50%;
     margin-left: 20%;
 }
-/* 
-.table__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-} */
 
 .title__tex {
     display: flex;

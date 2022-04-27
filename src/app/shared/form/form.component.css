@@ -1,0 +1,31 @@
+
+.forms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-input {
+    height: 35px;
+    width: 300px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
+}
+
+.my-input:focus{
+    border-color: white;
+}
+
+.btn-success{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
+    height: 35px;
+    font-size: 20px;
+    padding: 0px 15px;
+}
+
+
+
+::ng-deep .custom-style{
+    background-color:#600000e0;
+    color:white;
+  }

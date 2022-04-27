@@ -1,0 +1,11 @@
+<form class="form forms" [formGroup]="userGitForm" (submit)="search()">
+
+    <div class="form-group">
+        <input #userNameInput formControlName="userNameForm" class="form-control text-center my-input"
+            placeholder="user GitHub" autofocus>
+    </div>
+
+    <button class="btn btn-success btn-block ms-2 but" [disabled]="userGitForm.invalid" type="submit" >
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+</form>

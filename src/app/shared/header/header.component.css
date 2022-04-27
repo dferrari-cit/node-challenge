@@ -1,0 +1,44 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232730;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 90px;
+}
+.navbar__logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar__logo a {
+    transition: 0.3s;
+}
+
+.logo-git {
+    width: 40px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.bars {
+    cursor: pointer;
+    color: #fff;
+    font-size: 35px;
+    transition: 0.3s;
+}
+
+.bars:hover, .navbar__logo a:hover {
+    color: #acacac;
+}
+
+.divs-menu {
+    width: 25%;
+}
