@@ -87,9 +87,14 @@ describe('RegistryService', () => {
         });
 
         xit('should create a registry persistence in data base', async () => {
+            // Arreange
             jest.spyOn(registryService, 'create')
+
+            // Act
             let result = await registryService.create(registry);
             console.log(result)
+
+            // Assert
             expect(registryService.create).toBeCalledTimes(1);
 
         });
