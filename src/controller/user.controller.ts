@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { Registry } from "../model/registry.model";
-import { DBService } from "../service/db.service";
+import { RemoteDBService } from "../service/remote.db.service";
 import { UserMapper } from "../mapper/user.model.mapper";
 import { UserModel } from "../model/user.model";
 import { UserService } from "../service/user.service";
@@ -13,7 +13,7 @@ export class UserController {
     constructor(
         private userService: UserService,
         private userMapper: UserMapper,
-        private registryService: DBService) { }
+        private registryService: RemoteDBService) { }
 
     @Get(':user')
     @ApiOperation({ summary: 'GitHub User Name', description: 'Show data for valid user.', operationId: 'UserName' })

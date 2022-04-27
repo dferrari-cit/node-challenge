@@ -1,14 +1,14 @@
 import { Controller, Get, Param } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { Registry } from "../model/registry.model";
-import { DBService } from "../service/db.service";
+import { RemoteDBService } from "../service/remote.db.service";
 
 @Controller('search')
 @ApiTags('Search-Registry')
 export class RegistryController {
 
     constructor(
-        private registryService: DBService
+        private registryService: RemoteDBService
     ) { }
 
 

@@ -1,5 +1,5 @@
 import { RegistryDtoMapper } from "src/mapper/registry.dto.mapper";
-import { DBService } from "../service/db.service";
+import { RemoteDBService } from "../service/remote.db.service";
 import { RegistryController } from "./registry.controller";
 import { Model } from "mongoose";
 import { Registry, RegistryDocument } from "../model/registry.model";
@@ -7,13 +7,13 @@ import { RegistryDto } from "../adapter/registry.dto";
 
 
 describe('RegistryController', () => {
-    let registryService: DBService;
+    let registryService: RemoteDBService;
     let registryController: RegistryController;
     let registryDtoMapper: RegistryDtoMapper;
     let registryModel: Model<RegistryDocument>;
 
     beforeEach(() => {
-        registryService = new DBService(registryDtoMapper, registryModel);
+        registryService = new RemoteDBService(registryDtoMapper, registryModel);
         registryController = new RegistryController(registryService);
     });
 

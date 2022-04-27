@@ -2,7 +2,7 @@ import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 import { RegistryDtoMapper } from "../mapper/registry.dto.mapper";
 import { RegistrySchema } from "../model/registry.model";
-import { DBService } from "../service/db.service";
+import { RemoteDBService } from "../service/remote.db.service";
 import { RegistryController } from "./registry.controller";
 
 @Module({
@@ -10,6 +10,6 @@ import { RegistryController } from "./registry.controller";
         MongooseModule.forFeature([{ name: 'Registry', schema: RegistrySchema }])
     ],
     controllers: [RegistryController],
-    providers: [DBService, RegistryDtoMapper]
+    providers: [RemoteDBService, RegistryDtoMapper]
 })
 export class RegistryModule { }

@@ -7,7 +7,7 @@ import { Registry, RegistryDocument } from "../model/registry.model";
 
 
 @Injectable()
-export class DBService {
+export class RemoteDBService {
     constructor(
         private registryDtoMapper: RegistryDtoMapper,
         @InjectModel('Registry') private readonly registryModel: Model<RegistryDocument>

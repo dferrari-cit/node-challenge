@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 import { RegistrySchema } from "../model/registry.model";
-import { DBService } from "../service/db.service";
+import { RemoteDBService } from "../service/remote.db.service";
 import { UserController } from "../controller/user.controller";
 import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
 import { UserDtoMapper } from "../mapper/user-dto.mapper";
@@ -18,6 +18,6 @@ import { UsersRepository } from "src/local-data-base-users/local-db.repository";
         MongooseModule.forFeature([{name: Users.name, schema: UserSchema}], 'registryUsers')
     ],
     controllers: [UserController],
-    providers: [UserMapper, UserDtoMapper, StarredDtoMapper, UserService, DBService, RegistryDtoMapper,UsersService, UsersRepository]
+    providers: [UserMapper, UserDtoMapper, StarredDtoMapper, UserService, RemoteDBService, RegistryDtoMapper,UsersService, UsersRepository]
 })
 export class UserModule { }

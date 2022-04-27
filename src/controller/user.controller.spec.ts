@@ -2,7 +2,7 @@ import { UserModel } from '../model/user.model';
 import { UserMapper } from '../mapper/user.model.mapper';
 import { UserService } from "../service/user.service";
 import { UserController } from "./user.controller";
-import { DBService } from '../service/db.service';
+import { RemoteDBService } from '../service/remote.db.service';
 import { RegistryDtoMapper } from '../mapper/registry.dto.mapper';
 import { UserDtoMapper } from '../mapper/user-dto.mapper';
 import { StarredDtoMapper } from '../mapper/starred-dto.mapper';
@@ -22,7 +22,7 @@ describe('UserController', () => {
     let userMapper: UserMapper
     let registryDtoMapper: RegistryDtoMapper;
     let registryModel: Model<RegistryDocument>;
-    let dbService: DBService;
+    let dbService: RemoteDBService;
     let userDocument: Model<UsersDocument>;
     let dbLocalService: UsersService;
 
@@ -38,7 +38,7 @@ describe('UserController', () => {
         dbLocalService = new UsersService(repository);
         userService = new UserService(userDtoMapper, starredDtoMapper, dbLocalService);
         userMapper = new UserMapper();
-        dbService = new DBService(registryDtoMapper, registryModel);
+        dbService = new RemoteDBService(registryDtoMapper, registryModel);
         userController = new UserController(userService, userMapper, dbService);
     });
 

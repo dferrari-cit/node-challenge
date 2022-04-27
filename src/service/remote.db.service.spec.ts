@@ -1,19 +1,20 @@
 import { Registry } from "../model/registry.model";
 import { RegistryDtoMapper } from "../mapper/registry.dto.mapper";
-import { DBService } from "./db.service";
+import { RemoteDBService } from "./remote.db.service";
 import { RegistryDto } from "../adapter/registry.dto";
 import { getModelToken } from "@nestjs/mongoose";
 import { Test } from "@nestjs/testing";
 
 
 describe('RegistryService', () => {
-    let registryService: DBService;
+    let registryService: RemoteDBService;
     let registryDto = new RegistryDto('fulano_tal', 'Sun-Jan-1-2022-00:00')
 
     const mockregistryModel = {
         find: jest.fn(),
         save: jest.fn(),
-        exec: jest.fn()
+        exec: jest.fn(),
+        new: jest.fn()
     }
 
     const mockregistryDtoMapper = {
@@ -23,22 +24,19 @@ describe('RegistryService', () => {
     beforeEach(async () => {
         const moduleRef = await Test.createTestingModule({
             providers: [
-                DBService,
+                RemoteDBService,
                 {
                     provide: RegistryDtoMapper,
                     useValue: mockregistryDtoMapper
                 },
                 {
                     provide: getModelToken('Registry'),
-                    useValue: mockregistryModel,
-
+                    useValue: mockregistryModel
                 }
             ]
         }).compile();
 
-
-
-        registryService = moduleRef.get<DBService>(DBService);
+        registryService = moduleRef.get<RemoteDBService>(RemoteDBService);
     });
 
     it('should be defined', () => {
@@ -53,6 +51,7 @@ describe('RegistryService', () => {
 
 
         it('should get all registries', async () => {
+            //Arrenge
             jest.spyOn(registryService, 'getAll')
 
             // Act
@@ -85,6 +84,14 @@ describe('RegistryService', () => {
             // Assert
             expect(registryService.getByDate).toBeCalledTimes(1);
             expect(result).toEqual([registryDto]);
+        });
+
+        xit('should create a registry persistence in data base', async () => {
+            jest.spyOn(registryService, 'create')
+            let result = await registryService.create(registry);
+            console.log(result)
+            expect(registryService.create).toBeCalledTimes(1);
+
         });
 
     });
