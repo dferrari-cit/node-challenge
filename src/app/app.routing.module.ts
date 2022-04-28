@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { FilterComponent } from "./pages/filter/filter.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { SearchErrosComponent } from "./pages/search/search-erros/search-erros.component";
 import { SearchComponent } from "./pages/search/search.component";
@@ -30,13 +31,17 @@ const routes: Routes = [
         path: 'search/error/:typeError',
         component: SearchErrosComponent,
     },
+    {
+        path: 'filter',
+        component: FilterComponent,
+    }
 ]
 
 @NgModule({
-    imports: [ 
-        RouterModule.forRoot(routes) 
+    imports: [
+        RouterModule.forRoot(routes)
     ],
-    exports: [ RouterModule ]
+    exports: [RouterModule]
 })
 
-export class AppRoutingModule{}
+export class AppRoutingModule { }

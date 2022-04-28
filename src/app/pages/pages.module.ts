@@ -17,7 +17,7 @@ import { SearchModule } from "./search/search.module";
         FilterComponent
     ],
     imports: [
-        CommonModule,        
+        CommonModule,
         SharedModule,
         HomeModule,
         SearchModule,

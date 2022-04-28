@@ -1,48 +1,46 @@
-
 .contains {
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-    margin-top: 80px;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  height: 100%;
 }
 
 .contains p {
-    color: white;
+  color: white;
 }
 
 h1 {
-    color: white;
-    font-size: 55px;
-    text-align: center;
+  color: white;
+  font-size: 55px;
+  text-align: center;
 }
 
-
 .welcome-card {
-    height: 270px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #c4c4c425;
-    margin-top: 90px;
-    border-radius: 15px;
-    width: 100%;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c4c4c425;
+  margin-top: 90px;
+  border-radius: 15px;
+  width: 100%;
 }
 
 .welcome-info {
-    font-size: 21px;
-    color: white;
-    margin-top: 50px;
-    margin-bottom: 5%;
-    text-align: center;
-    line-height: 1.2;
+  font-size: 21px;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 5%;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .my-input {
-    height: 45px;
-    width: 300px;
+  height: 45px;
+  width: 300px;
 }
 
-.my-input:focus{
-    border-color: white;
+.my-input:focus {
+  border-color: white;
 }

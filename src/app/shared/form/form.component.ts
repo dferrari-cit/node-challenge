@@ -12,15 +12,15 @@ import { UserService } from 'src/app/services/user.service';
 export class FormComponent implements OnInit {
 
   userGitForm: FormGroup;
-  @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement> | undefined; 
+  @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement> | undefined;
   page: any;
 
-  constructor( 
-    private formBuilder: FormBuilder, 
-    private userService: UserService, 
-    private router: Router ,
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router,
     private activatedRoute: ActivatedRoute
-  ) { 
+  ) {
     this.userGitForm = new FormGroup({
       userNameForm: new FormControl('')
     })
@@ -32,26 +32,26 @@ export class FormComponent implements OnInit {
     });
 
     this.page = this.activatedRoute.snapshot;
-    console.log('page: ' + this.page) 
+    console.log('page: ' + this.page)
   }
 
-  search(){
+  search() {
 
     var userName: string = this.userGitForm.get('userNameForm')?.value;
-    
+
     this.userService.findUser(userName)
-    .subscribe(
-      () => this.router.navigate(['search', userName]),
-      (err: ErrorUser) => {  
+      .subscribe(
+        () => this.router.navigate(['search', userName]),
+        (err: ErrorUser) => {
           //this.userNameInput?.nativeElement.focus();
-          if(err.status == '404'){
+          if (err.status == '404') {
             console.log("AQUIIIII")
             this.router.navigate(['search/error/', 'notfounduser']);
-          }else {
+          } else {
             this.router.navigate(['search/error/', 'diferente']);
-          }                   
-          
+          }
+
         }
-    );   
+      );
   }
 }

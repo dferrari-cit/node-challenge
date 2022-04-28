@@ -1,0 +1,20 @@
+<form class="filter-form">
+    <p class="filter-form-title">Filtrar por:</p>
+    <select class="filter-form__input" name="filter" id="filter-form-select">
+        <option value="username">Nome de usuário Git</option>
+        <option value="date">Data</option>
+        <option value="username-date">Nome e data</option>
+    </select><br>
+    <input class="filter-form__input" name="username" type="text"><br><br>
+    <div class="filter-by-date">
+        <div class="filter-form__date-titles">
+            <p>Dia</p>
+            <p>Mês</p>
+            <p>Ano</p>
+        </div>
+        <input class="filter-form__date-input" name="day" type="text">
+        <input class="filter-form__date-input" name="month" type="text">
+        <input class="filter-form__date-input" name="year" type="text">
+    </div> <br>
+    <button class="btn btn-success filter-form__button" type="submit">Buscar</button>
+</form>
