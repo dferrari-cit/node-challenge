@@ -7,8 +7,7 @@ import { UserModel } from "../model/user.model";
 @Injectable()
 export class UserMapper{
     dtoToModel([userDto, starredDto]: [UserDto, StarredDto[]]): UserModel{
-        return new UserModel(userDto.avatar_url, userDto.name, userDto.bio, userDto.url, 
-            starredDto instanceof StarredDto ? this.dtoListToModelList(starredDto): []);
+        return new UserModel(userDto.avatar_url, userDto.name, userDto.bio, userDto.url, this.dtoListToModelList(starredDto));
     }
 
     private dtoListToModelList(starredDto: Array<StarredDto>): Array<StarredModel>{

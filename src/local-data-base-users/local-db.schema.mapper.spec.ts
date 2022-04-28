@@ -58,7 +58,6 @@ describe('UserSchemaMapper', () => {
             jest.spyOn(userMapper, 'responseToDto').mockImplementation(() => userDto);
 
             const result = schemaMapper.schemaToDto(user);
-            console.log(result);
             const firstResult = result[0];
             const secondResult = result[1];
             const secondResultFirstIndex = secondResult[0];

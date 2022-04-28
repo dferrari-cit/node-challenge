@@ -12,7 +12,7 @@ export class UsersService{
         private readonly usersRepository: UsersRepository,
         private mapper: UserSchemaMapper){}
 
-    async createUser(user: UserModel | [UserDto, StarredDto[] | []]): Promise<Users>{
+    async createUser(user: UserModel | [UserDto, StarredDto[]]): Promise<Users>{
         let newUser;
         if(user instanceof UserModel){
             newUser = this.mapper.modelToSchema(user);
@@ -26,5 +26,9 @@ export class UsersService{
     async findUser(name: string): Promise<[UserDto, StarredDto[]]>{
         let result = await this.usersRepository.findOne({urlUser: {$regex: name}});
         return this.mapper.schemaToDto(result);
+    }
+
+    async findAll(){
+        return await this.usersRepository.findAll();
     }
 }

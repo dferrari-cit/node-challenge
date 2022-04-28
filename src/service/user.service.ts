@@ -21,13 +21,13 @@ export class UserService {
             }).then(async result => {
                 const userDto: UserDto = this.userDtoMapper.responseToDto(result);
                 const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
-                console.log([userDto, starredDto]);
                 this.dbLocalService.createUser([userDto, starredDto]);
                 return [userDto, starredDto];
 
-            }).catch(error => {
+            }).catch(async error => {
+                console.log('entrou no catch');
                 if(error.status !== HttpStatus.NOT_FOUND){
-                    return this.dbLocalService.findUser(userName);
+                    return await this.dbLocalService.findUser(userName);
                 }
             });
             return result;
