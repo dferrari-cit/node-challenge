@@ -21,7 +21,8 @@ export class UserService {
             }).then(async result => {
                 const userDto: UserDto = this.userDtoMapper.responseToDto(result);
                 const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
-                this.dbLocalService.createUser([userDto, starredDto])
+                console.log([userDto, starredDto]);
+                this.dbLocalService.createUser([userDto, starredDto]);
                 return [userDto, starredDto];
 
             }).catch(error => {

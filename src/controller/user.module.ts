@@ -11,6 +11,7 @@ import { RegistryDtoMapper } from "../mapper/registry.dto.mapper";
 import { UsersService } from "src/local-data-base-users/local-db.service";
 import { Users, UserSchema } from "src/local-data-base-users/lodal-db.schema";
 import { UsersRepository } from "src/local-data-base-users/local-db.repository";
+import { UserSchemaMapper } from "src/local-data-base-users/local-db.schema.mapper";
 
 @Module({
     imports: [
@@ -18,6 +19,6 @@ import { UsersRepository } from "src/local-data-base-users/local-db.repository";
         MongooseModule.forFeature([{name: Users.name, schema: UserSchema}], 'registryUsers')
     ],
     controllers: [UserController],
-    providers: [UserMapper, UserDtoMapper, StarredDtoMapper, UserService, RemoteDBService, RegistryDtoMapper,UsersService, UsersRepository]
+    providers: [UserMapper, UserDtoMapper, StarredDtoMapper, UserService, RemoteDBService, RegistryDtoMapper,UsersService, UsersRepository,UserSchemaMapper]
 })
 export class UserModule { }

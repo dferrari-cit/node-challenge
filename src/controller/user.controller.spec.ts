@@ -12,6 +12,7 @@ import { UserDto } from '../adapter/user.dto';
 import { UsersRepository } from '../local-data-base-users/local-db.repository';
 import { UsersDocument } from '../local-data-base-users/lodal-db.schema';
 import { UsersService } from '../local-data-base-users/local-db.service';
+import { UserSchemaMapper } from '../local-data-base-users/local-db.schema.mapper';
 
 
 describe('UserController', () => {
@@ -35,7 +36,7 @@ describe('UserController', () => {
     beforeEach(() => {
         userDtoMapper = new UserDtoMapper();
         starredDtoMapper = new StarredDtoMapper();
-        dbLocalService = new UsersService(repository);
+        dbLocalService = new UsersService(repository, new UserSchemaMapper);
         userService = new UserService(userDtoMapper, starredDtoMapper, dbLocalService);
         userMapper = new UserMapper();
         dbService = new RemoteDBService(registryDtoMapper, registryModel);

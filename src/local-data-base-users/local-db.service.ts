@@ -8,10 +8,11 @@ import { Users } from "./lodal-db.schema";
 
 @Injectable()
 export class UsersService{
-    private mapper = new UserSchemaMapper();
-    constructor(private readonly usersRepository: UsersRepository){}
+    constructor(
+        private readonly usersRepository: UsersRepository,
+        private mapper: UserSchemaMapper){}
 
-    async createUser(user: UserModel | [UserDto, StarredDto[]]): Promise<Users>{
+    async createUser(user: UserModel | [UserDto, StarredDto[] | []]): Promise<Users>{
         let newUser;
         if(user instanceof UserModel){
             newUser = this.mapper.modelToSchema(user);

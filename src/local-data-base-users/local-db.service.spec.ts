@@ -7,6 +7,9 @@ import { StarredModel } from "../model/starred.model";
 import { UsersService } from "./local-db.service";
 import { UserDto } from "../adapter/user.dto";
 import { StarredDto } from "../adapter/starred.dto";
+import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
+import { UserDtoMapper } from "../mapper/user-dto.mapper";
+import { UserMapper } from "../mapper/user.model.mapper";
 
 describe('UsersService', () => {
     let service: UsersService;
@@ -21,7 +24,7 @@ describe('UsersService', () => {
     beforeEach(() => {
         mapper = new UserSchemaMapper();
         repository = new UsersRepository(document);
-        service = new UsersService(repository);
+        service = new UsersService(repository, mapper);
         user = new Users();
         starredModel = new StarredModel('test','test','test','test')
         userModel = new UserModel('test','test','test','test',[starredModel]);

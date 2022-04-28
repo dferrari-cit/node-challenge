@@ -10,13 +10,14 @@ import { UsersService } from "../local-data-base-users/local-db.service";
 import { UsersRepository } from "../local-data-base-users/local-db.repository";
 import { Model } from "mongoose";
 import { Users, UsersDocument } from "../local-data-base-users/lodal-db.schema";
+import { UserSchemaMapper } from "../local-data-base-users/local-db.schema.mapper";
 
 describe('UserService', () => {
     const userDtoMapper = new UserDtoMapper();
     const starredDtoMapper = new StarredDtoMapper();
     let userDocument: Model<UsersDocument>;
     const repository = new UsersRepository(userDocument);
-    const db = new UsersService(repository);
+    const db = new UsersService(repository, new UserSchemaMapper);
     const userService = new UserService(userDtoMapper, starredDtoMapper, db);
     beforeEach(() => {
         jest.spyOn(userDtoMapper, 'responseToDto').mockImplementation(() => {
