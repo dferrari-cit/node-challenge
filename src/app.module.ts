@@ -11,7 +11,7 @@ import { LocalDataBaseModule } from './local-data-base-users/local-db.module';
     MongooseModule.forRoot('mongodb+srv://node_challenge_devops:devops_123@cluster0.vlh0o.mongodb.net/resgistrysDatabase?retryWrites=true&w=majority'),
     MongooseModule.forRootAsync({
       useFactory: () => ({
-        uri: 'mongodb://admin:secret@172.17.0.1:27017/registry?authSource=admin',
+        uri: 'mongodb://admin:secret@mongo:27017/registry?authSource=admin',
         useNewUrlParser: true
       }),
       connectionName: 'registryUsers'
