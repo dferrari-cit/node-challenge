@@ -1,6 +1,6 @@
 FROM node:latest
 WORKDIR /
-COPY . .
-EXPOSE 3000
+ADD . .
+EXPOSE ${API_PORT}
 RUN npm install
 CMD npm run start:dev
