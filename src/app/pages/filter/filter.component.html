@@ -1,5 +1,5 @@
 <app-header></app-header>
 <div class="contains">
-   <app-filter-form></app-filter-form>
-   <app-filter-table></app-filter-table>
+   <app-filter-form (emitResult)="filterResultForm = $event"></app-filter-form>
+   <app-filter-table [filterResultArray]="filterResultForm"></app-filter-table>
 </div>

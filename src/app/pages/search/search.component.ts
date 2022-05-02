@@ -17,10 +17,10 @@ export class SearchComponent {
   ngOnInit(): void {
     this.userName = this.activatedRoute.snapshot.params['userName'];
     this.user = this.activatedRoute.snapshot.data['user'];
-    this.saveUser(this.user);
+    this.treatUser(this.user);
   }
 
-  private saveUser(userT: User){
+  private treatUser(userT: User){
     if(userT.avatar == null){
       userT.avatar = '../../../assets/imgs/no-image.webp'
     }
@@ -41,8 +41,8 @@ export class SearchComponent {
         element.urlRepository = "https://github.com/" + repository.slice(29, )
       })    
     }
-
     this.user = userT;
+    console.log(this.user)
   }
 
 }

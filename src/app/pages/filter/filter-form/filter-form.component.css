@@ -1,35 +1,46 @@
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-form input, select {
+  height: 35px;
+  width: 300px;
+  border-radius: 5px 5px;
+  background-color: #ccc;
+  font-size: 14px;
+  margin-top: 5%;
+  padding: 5px;
+}
+
 .filter-form-title {
   color: white;
   margin-top: 8%;
 }
 
-.filter-form__input {
-  height: 35px;
-  width: 300px;
-  border-radius: 5px 5px;
-  background-color: #ccc;
-  margin-top: 5%;
-  padding: 5px;
+.form__name {
+  height: 60px;
 }
 
 .filter-by-date {
-  display: inline-block;
-  margin-bottom: 10%;
+  display: flex;
+  width: 100%;
 }
 
-.filter-form__date-titles {
+.filter-form__date {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+}
+
+.filter-form__date label{
   color: #7d96bd;
 }
 
-.filter-form__date-input {
-  height: 35px;
-  width: 93px;
-  border-radius: 5px 5px;
-  background-color: #ccc;
-  padding: 5px;
-  margin-right: 10px;
+.filter-form__date input {
+  width: 90px;
 }
 
 .filter-form__button {
@@ -38,4 +49,6 @@
   width: 300px;
   border-radius: 5px 5px;
   margin-top: 15%;
+  font-size: 16px;
 }
+

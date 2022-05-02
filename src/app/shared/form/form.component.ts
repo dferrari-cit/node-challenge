@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
 
   userGitForm: FormGroup;
   @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement> | undefined;
-  page: any;
+  rota: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,8 +31,9 @@ export class FormComponent implements OnInit {
       userNameForm: ['', Validators.required]
     });
 
-    this.page = this.activatedRoute.snapshot;
-    console.log('page: ' + this.page)
+
+    this.rota = this.activatedRoute.snapshot.routeConfig?.path;
+    //console.log('page: ' + this.rota)
   }
 
   search() {
@@ -41,7 +42,15 @@ export class FormComponent implements OnInit {
 
     this.userService.findUser(userName)
       .subscribe(
-        () => this.router.navigate(['search', userName]),
+        () => {
+          console.log(this.rota)
+          if( this.activatedRoute.snapshot.routeConfig?.path == 'home' ){
+            this.router.navigate(['search', userName])
+          }else
+          if(this.activatedRoute.snapshot.routeConfig?.path == 'home'){
+
+          }
+        },
         (err: ErrorUser) => {
           //this.userNameInput?.nativeElement.focus();
           if (err.status == '404') {

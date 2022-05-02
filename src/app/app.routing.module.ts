@@ -18,7 +18,7 @@ const routes: Routes = [
     },
     {
         path: 'search',
-        component: SearchComponent,
+        redirectTo: 'home', pathMatch: 'full',
     },
     {
         path: 'search/:userName',

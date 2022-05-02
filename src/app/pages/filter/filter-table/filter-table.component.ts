@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Filter } from 'src/app/interfaces/filter';
 
 @Component({
   selector: 'app-filter-table',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterTableComponent implements OnInit {
 
+  @Input() filterResultArray: Filter[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+   
   }
 
+  checkfilterResultArray(): boolean{
+    console.log(this.filterResultArray)
+    if(this.filterResultArray == undefined){
+      return true;
+    }else{
+      return false;
+    }
+  }
 }

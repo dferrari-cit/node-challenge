@@ -13,12 +13,11 @@
   border-bottom-right-radius: 0.3rem;
   overflow: hidden;
   font-family: Source Sans Pro, sans-serif;
-  margin-top: 5%;
-  margin-left: 15%;
+  margin-top: 55px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 140%;
+  width: 1100px;
 }
 
 .table__thead tr {
@@ -35,12 +34,8 @@
 tr td,
 tr th {
   height: 40px;
-  padding: 5px 5px 5px 16px;
+  padding: 5px 15px 5px 16px;
   text-align: start;
-}
-
-.table__tdoby .center {
-  text-align: center;
 }
 
 .table__tdoby tr {
@@ -53,11 +48,40 @@ tr th {
   line-height: 14px;
 }
 
+.tdoby__tr__link {
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.tdoby__tr__link:hover {
+  color: rgb(131, 131, 204);
+}
+
 .eyes {
-  color: blue;
+  color: #5B9DFF;
   font-size: 20px;
-  align-items: center;
-  text-align: center;
-  align-self: center;
+  transition: 0.4s;
+}
+
+.eyes:hover {
+  color: #385b91;
+}
+
+.not-found-register {
+  background: rgba(85, 90, 101, 0.25);
+  border-radius: 10px;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  height: 40px;
+  width: 100%;
+}
+
+.not-found-register p{
+  color: #D9D9D9;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0px;
 }

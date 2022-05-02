@@ -1,4 +1,4 @@
-<div class="contains__table">
+<div class="contains__table ms-5">
     <table aria-describedby="table of filtered search" class="content__table">
         <thead class="table__thead">
             <tr>
@@ -9,17 +9,17 @@
                 <th scope="col" class="text-center">Top 5 Repositórios</th>
             </tr>
         </thead>
-        <tbody class="table__tdoby">
+        <tbody class="table__tdoby" *ngFor="let filterResult of filterResultArray">
             <tr>
-                <td style="width: 15%;">02/04/2004</td>
-                <td style="width: 20%;">corcel2</td>
-                <td style="width: 25%;">exemplo de bio exemplo de bio</td>
-                <td style="width: 20%;">https://api.github.com/users/corceo2...</td>
-                <td class="center">
+                <td style="width: 15%;" >{{filterResult.searchedDate}}</td>
+                <td style="width: 15%;">{{filterResult.searchedName}}</td>
+                <td style="width: 35%;"></td>
+                <td style="width: 25%;" class="tdoby__tr__link"></td>
+                <td style="width: 25%;" class="text-center">
                     <button class="btn">
                         <a class="eyes" href="urldorepositorio" target="_blank">
                             <div class="eyes">
-                                <p class="fa fa-eye eyes" style="text-align: center;" aria-hidden="true"></p>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
                             </div>
                         </a>
                     </button>
@@ -27,4 +27,7 @@
             </tr>
         </tbody>
     </table>
+    <div class="not-found-register mt-4" *ngIf="filterResultArray.length == 0">
+        <p>Não há resultados para está pesquisa...</p>
+    </div>
 </div>
