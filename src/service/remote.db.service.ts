@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
+import { validateDay } from "../util/validate-day";
+import { validateRegex } from "../util/validate-regex";
 import { RegistryDto } from "../adapter/registry.dto";
 import { RegistryDtoMapper } from "../mapper/registry.dto.mapper";
 import { Registry, RegistryDocument } from "../model/registry.model";
@@ -24,7 +26,9 @@ export class RemoteDBService {
     }
 
     async getByDate(data: string): Promise<Array<RegistryDto>> {
-        const response = await this.registryModel.find({ searchedDate: { $regex: data } }).exec();
+        const dayValidated = validateDay(data);
+        const result = validateRegex(dayValidated);
+        const response = await this.registryModel.find({ searchedDate: { $regex: result } }).exec();
         return this.registryDtoMapper.responseToDto(response);
     }
 
