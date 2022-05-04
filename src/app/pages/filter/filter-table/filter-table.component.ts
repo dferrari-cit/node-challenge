@@ -32,7 +32,7 @@ export class FilterTableComponent implements OnInit {
     })
   }
 
-  moreInfo(){
-    // this.router.navigate(['search', userName])
+  moreInfo(userName: string){
+    this.router.navigate(['search', userName])
   }
 }
