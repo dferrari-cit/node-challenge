@@ -3,23 +3,43 @@
 }
 
 .contains {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 10px;
+}
+
+.errors-group{
+    padding-top: 10%;
+    margin-left: 37%;
 }
 
 .contains__infos-user {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    margin-top: 20px;
+    background-color: rgba(196,196,196, 5%);
+    color: #D9D9D9;
+    border-radius: 10px 10px;
+    height: 60px;
+    width: 396px;
+    padding: 20px;
 }
-.erros-icon {
-    font-size: 50px;
+
+.errors{
+    height: 315px;
+    width: 396px;
+    background-color: rgba(196,196,196, 5%);
+    border-color: #232730;
+    border-radius: 10px 10px;
+    border-style: solid;
+    text-align: center;
+}
+
+.errors-icon {
+    font-size: 250px;
+    padding-top: 25px;
 }
 
 .contains__infos-user p {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }

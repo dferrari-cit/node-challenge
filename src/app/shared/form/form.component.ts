@@ -56,10 +56,9 @@ export class FormComponent implements OnInit {
           if (err.status == '404') {
             console.log("AQUIIIII")
             this.router.navigate(['search/error/', 'notfounduser']);
-          } else {
-            this.router.navigate(['search/error/', 'diferente']);
+          } else if (err.status == '504') {
+            this.router.navigate(['search/error/', 'gatewaytimeouterror']);
           }
-
         }
       );
   }

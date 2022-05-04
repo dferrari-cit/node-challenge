@@ -1,10 +1,17 @@
 <app-header></app-header>
 
-<div class="contains">
-    <div class="contains__infos-user">            
-        <div class="erros-icon"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>           
-    
-        <p>{{ menssage }}</p>
+<div class="errors-group">
+    <div class="contains">
+        <div class="errors">
+            <div class="errors-icon">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            </div>           
+        </div>
     </div>
-
+    
+    <div class="contains">
+        <div class="contains__infos-user">                     
+            <p>{{ message }}</p>
+        </div>
+    </div>
 </div>

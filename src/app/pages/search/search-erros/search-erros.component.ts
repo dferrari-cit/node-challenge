@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchErrosComponent implements OnInit {
 
   tagErrors: any;
-  menssage: string = '';
+  message: string = '';
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -17,11 +17,12 @@ export class SearchErrosComponent implements OnInit {
     this.tagErrors = this.activatedRoute.snapshot.params['typeError']
     //console.log(this.tagErros)
 
-    if(this.tagErrors = 'notfounduser'){
-      this.menssage = 'Usuário não encontrado :( ...'
-    }else {
-      this.menssage = 'Eu não sei o que eu estou fazendo!!'
+    if(this.tagErrors == 'notfounduser'){
+      this.message = 'Usuário não encontrado!'
+    }else if(this.tagErrors == 'gatewaytimeouterror'){
+      this.message = 'Erro no servidor!'
+    }else{
+      this.message = 'Erro'
     }
   }
-
 }
