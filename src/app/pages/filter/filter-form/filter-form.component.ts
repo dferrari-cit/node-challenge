@@ -21,20 +21,20 @@ export class FilterFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private filter: FilterService) { 
     this.filterForm = new FormGroup({
-      inputSelect: new FormControl(''),
+      inputSelectType: new FormControl(''),
       inputName: new FormControl(''),
       inputDay: new FormControl(''),
-      inputMonth: new FormControl(''),
+      inputSelectMonth: new FormControl(''),
       inputYear: new FormControl(''),
     })
   }
 
   ngOnInit(): void {
     this.filterForm = this.formBuilder.group({
-      inputSelect: ['', Validators.required],
+      inputSelectType: ['', Validators.required],
       inputName: [''],
       inputDay: [''],
-      inputMonth: [''],
+      inputSelectMonth: [''],
       inputYear: ['']
     })
   }
@@ -43,13 +43,14 @@ export class FilterFormComponent implements OnInit {
     var dateForm: string = '';
     this.request = 'search/'
 
-    if(this.filterForm.get('inputSelect')?.value == 'name'){
+    if(this.filterForm.get('inputSelectType')?.value == 'name'){
       this.request +=  'name/' + this.filterForm.get('inputName')?.value;
     }else
-    if(this.filterForm.get('inputSelect')?.value == 'date') {
-
-      if(this.filterForm.get('inputMonth')?.value){
-        dateForm += this.filterForm.get('inputMonth')?.value;
+    if(this.filterForm.get('inputSelectType')?.value == 'date') {
+      console.log(this.filterForm.get('inputSelectMonth')?.value)
+      
+      if(this.filterForm.get('inputSelectMonth')?.value){
+        dateForm += this.filterForm.get('inputSelectMonth')?.value;
       }
   
       if(this.filterForm.get('inputDay')?.value && dateForm != ''){
@@ -82,7 +83,7 @@ export class FilterFormComponent implements OnInit {
   }
 
   selectChange(){
-    this.typeSearch = this.filterForm.get('inputSelect')?.value;
+    this.typeSearch = this.filterForm.get('inputSelectType')?.value;
   }
 
 }

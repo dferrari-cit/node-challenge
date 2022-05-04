@@ -1,7 +1,7 @@
 <form class="filter-form" [formGroup]="filterForm" (submit)="search()">
     <div class="form-group">
         <label class="filter-form-title">Filtrar por:</label>
-        <select formControlName="inputSelect" class="form-control filter-form__input" (change)="selectChange()">
+        <select formControlName="inputSelectType" class="form-control filter-form__input" (change)="selectChange()">
             <option value="" disabled selected>Selecione um modo de busca...</option>
             <option value="all">Todos os Registros</option>
             <option value="name">Nome de usuário Git</option>
@@ -14,15 +14,29 @@
     <div class="filter-by-date mt-3" *ngIf="typeSearch == 'date'">
         <div class="form-group filter-form__date">
             <label>Dia</label>
-            <input formControlName="inputDay" class="form-control" name="day" type="text">
+            <input formControlName="inputDay" class="form-control" name="day" type="number">
         </div>
         <div class="form-group filter-form__date ms-2">
             <label>Mês</label>
-            <input formControlName="inputMonth" class="form-control" name="month" type="text">
+            <select formControlName="inputSelectMonth" class="form-control">
+                <option value="Jan">Janeiro</option>
+                <option value="Feb">Fevereiro</option>
+                <option value="Mar">Março</option>
+                <option value="Apr">Abril</option>
+                <option value="May">Maio</option>
+                <option value="Jun">Junho</option>
+                <option value="Jul">Julho</option>
+                <option value="Aug">Agosto</option>
+                <option value="Sep">Setembro</option>
+                <option value="Oct">Outubro</option>
+                <option value="Nov">Novembro</option>
+                <option value="Dec">Dezembro</option>
+            </select>
+
         </div>
         <div class="form-group filter-form__date ms-2">
             <label>Ano</label>
-            <input formControlName="inputYear" class="form-control" name="year" type="test" placeholder="ex: 2017" min="2000" max="2100">
+            <input formControlName="inputYear" class="form-control" name="year" type="number" placeholder="ex: 2017" min="2000" max="2100">
         </div>
     </div>
     <button [disabled]="filterForm.invalid" class="btn btn-success filter-form__button" type="submit">Buscar</button>

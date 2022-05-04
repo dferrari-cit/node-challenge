@@ -39,7 +39,7 @@
   color: #7d96bd;
 }
 
-.filter-form__date input {
+.filter-form__date input, .filter-form__date select {
   width: 90px;
 }
 

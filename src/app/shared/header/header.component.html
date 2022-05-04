@@ -1,12 +1,15 @@
 <header class="header fixed-top">
     <nav class="header__navbar">
-        <div class="navbar__logo divs-menu" (click)="returnHomePage()">
+        <div class="navbar__divs navbar__logo  ms-5" (click)="returnHomePage()">
             <img class="logo-git" src="../../assets/imgs/GitHub-Mark-Light.png" alt="" srcset="">
             <a class="navbar-brand">GitHub USER</a>
         </div>        
-        <div class="navbar__input divs-menu">
-            <app-form></app-form>
+        <div class="navbar__divs navbar__input" *ngIf="page != 'Histórico'">
+            <app-form ></app-form>
         </div>
-        <div class="bars divs-menu d-flex justify-content-end"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        <div class="navbar__divs navbar__bars me-5">
+            <p class="me-3">{{ page }}</p>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
     </nav>
 </header>

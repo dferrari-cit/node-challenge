@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Filter } from 'src/app/interfaces/filter';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-table',
@@ -12,20 +13,11 @@ export class FilterTableComponent implements OnInit {
   @Input() filterResultArray: Filter[] = [];
   pageArray = this.filterResultArray;
   pagination = true;
-  limitator = 13;
+  limitator = 10;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  checkfilterResultArray(): boolean{
-    console.log(this.filterResultArray)
-    if(this.filterResultArray == undefined){
-      return true;
-    }else{
-      return false;
-    }
   }
 
   OnPageChange(event: PageEvent){
@@ -38,5 +30,9 @@ export class FilterTableComponent implements OnInit {
         this.pageArray.push(result);
       }
     })
+  }
+
+  moreInfo(){
+    // this.router.navigate(['search', userName])
   }
 }

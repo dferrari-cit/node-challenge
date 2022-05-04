@@ -1,39 +1,45 @@
 <div class="contains__table ms-5">
+
     <table aria-describedby="table of filtered search" class="content__table">
         <thead class="table__thead">
             <tr>
                 <th scope="col">Data consulta</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Bio</th>
-                <th scope="col">UrlUser</th>
-                <th scope="col" class="text-center">Top 5 Repositórios</th>
+                <th scope="col" class="text-center">Nome</th>
+                <!--<th scope="col">Bio</th>
+                <th scope="col">UrlUser</th> -->
+                <th scope="col" class="text-center">Mais Informações</th>
             </tr>
         </thead>
-            <tbody class="table__tdoby" *ngFor="let filterResult of pagination == true ? filterResultArray : pageArray; index as i">
-                <tr *ngIf="i/limitator < 1">
-                    <td style="width: 25%;" >{{filterResult.searchedDate}}</td>
-                    <td style="width: 1%;">{{filterResult.searchedName}}</td>
-                    <td style="width: 35%;"></td>
-                    <td style="width: 25%;" class="tdoby__tr__link"></td>
-                    <td style="width: 25%;" class="text-center">
-                        <button class="btn">
-                            <a class="eyes" href="urldorepositorio" target="_blank">
-                                <div class="eyes">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        <mat-paginator [length]="filterResultArray.length"
-              [pageSize]="limitator"
-              (page)="OnPageChange($event)"
-              aria-label="Select page">
-        </mat-paginator>
-    </table>
-    <div></div>
+        <tbody class="table__tdoby" *ngFor="let filterResult of pagination == true ? filterResultArray : pageArray; index as i">
+            <tr *ngIf="i/limitator < 1">
+                <td style="width: 45%;" >{{filterResult.searchedDate}}</td>
+                <td style="width: 40%;" class="text-center">{{filterResult.searchedName}}</td>
+                <!-- <td style="width: 35%;"></td>
+                <td style="width: 25%;" class="tdoby__tr__link"></td> -->
+                <td style="width: 5%;" class="text-center">
+                    <button class="btn" (click)="moreInfo()">
+                        <a class="eyes" href="urldorepositorio" target="_blank">
+                            <div class="eyes">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>   
+   
     <div class="not-found-register mt-4" *ngIf="filterResultArray.length == 0">
         <p>Não há resultados para está pesquisa...</p>
     </div>
+
+    <div class="pagination">
+        <mat-paginator 
+            [length]="filterResultArray.length"
+            [pageSize]="limitator"
+            (page)="OnPageChange($event)"
+            [showFirstLastButtons]="true"
+            aria-label="Select page">
+        </mat-paginator>
+    </div>    
 </div>

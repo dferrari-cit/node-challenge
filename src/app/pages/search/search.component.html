@@ -1,8 +1,7 @@
-<app-header></app-header>
-
+<app-header [page]="'Home'"></app-header>     
 
 <div class="contains">
-    <div class="contains__infos-user">            
+    <div class="contains__infos-user">    
         <app-info-user [userInfo]="user" ></app-info-user>            
     
         <app-starred-list [starredListArray]="user.starredList"></app-starred-list>            

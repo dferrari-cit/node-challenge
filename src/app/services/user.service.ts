@@ -18,30 +18,30 @@ export class UserService {
         return this.http.get<User>(this.apiUrl + userName);
     }
     
-    public treatResponse(userT: User): User{
+    public treatResponse(user: User): User{
 
-        if(userT.avatar == null){
-            userT.avatar = '../../../assets/imgs/no-image.webp'
+        if(user.avatar == null){
+            user.avatar = '../../../assets/imgs/no-image.webp'
           }
-          if(userT.bio == null){
-            userT.bio = '...'
+          if(user.bio == null){
+            user.bio = '...'
           }
-          if(userT.name == null){
-            userT.name = '...'
+          if(user.name == null){
+            user.name = '...'
           }
-          if(userT.urlUser == null){
-            userT.urlUser = '...'
+          if(user.urlUser == null){
+            user.urlUser = '...'
           }else{
-            userT.urlUser = "https://github.com/" + userT.urlUser.slice(29, )
+            user.urlUser = "https://github.com/" + user.urlUser.slice(29, )
           }
-          if(userT.starredList.length > 0){
-            userT.starredList.forEach(element => {
+          if(user.starredList.length > 0){
+            user.starredList.forEach(element => {
               let repository = element.urlRepository;
               element.urlRepository = "https://github.com/" + repository.slice(29, )
             })    
           }
       
-          this.user = userT;
+          this.user = user;
 
         return this.user;
     }

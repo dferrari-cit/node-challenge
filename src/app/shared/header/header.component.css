@@ -11,6 +11,9 @@ a{
     padding-right: 20px;
     height: 90px;
 }
+.navbar__divs {
+    width: 25%;
+}
 .navbar__logo {
     display: flex;
     justify-content: left;
@@ -28,17 +31,24 @@ a{
     margin-right: 10px;
 }
 
-.bars {
+.navbar__bars {
     cursor: pointer;
     color: #fff;
     font-size: 35px;
     transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.bars:hover, .navbar__logo a:hover {
+.navbar__bars p{
     color: #acacac;
+    font-size: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
 }
 
-.divs-menu {
-    width: 25%;
+.navbar__bars:hover, .navbar__logo a:hover {
+    color: #acacac;
 }

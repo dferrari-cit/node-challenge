@@ -1,7 +1,9 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ErrorUser } from 'src/app/interfaces/error-user';
+import { User } from 'src/app/interfaces/user';
+import { SearchEmitEventService } from 'src/app/services/search-emit-event.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,14 +14,17 @@ import { UserService } from 'src/app/services/user.service';
 export class FormComponent implements OnInit {
 
   userGitForm: FormGroup;
-  @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement> | undefined;
   rota: any;
+  user!: User;
+  @Output() emitFormText = new EventEmitter<string>();
+  @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement> | undefined;
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private searchEmiteventservice: SearchEmitEventService
   ) {
     this.userGitForm = new FormGroup({
       userNameForm: new FormControl('')
@@ -42,14 +47,15 @@ export class FormComponent implements OnInit {
 
     this.userService.findUser(userName)
       .subscribe(
-        () => {
-          console.log(this.rota)
+        (resp) => {
+
           if( this.activatedRoute.snapshot.routeConfig?.path == 'home' ){
             this.router.navigate(['search', userName])
-          }else
-          if(this.activatedRoute.snapshot.routeConfig?.path == 'home'){
-
+          }else{
+            this.user = this.userService.treatResponse(resp);
+            this.searchEmiteventservice.emitUser(this.user)            
           }
+          
         },
         (err: ErrorUser) => {
           //this.userNameInput?.nativeElement.focus();
