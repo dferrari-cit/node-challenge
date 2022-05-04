@@ -17,7 +17,7 @@
             <tbody class="table__tdoby" *ngFor="let starredElement of starredListArray">
                 <tr>
                     <td>{{starredElement.name}}</td>
-                    <td>{{starredElement.description}}</td>
+                    <td>{{starredElement.description.length > 144 ? starredElement.description.substr(0,144)+'...': starredElement.description}}</td>
                     <td class="text-center">{{starredElement.flagType}}</td>
                     <td>
                        <button class="btn">

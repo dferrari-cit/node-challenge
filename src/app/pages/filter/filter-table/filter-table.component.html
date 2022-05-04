@@ -5,8 +5,6 @@
             <tr>
                 <th scope="col">Data consulta</th>
                 <th scope="col" class="text-center">Nome</th>
-                <!--<th scope="col">Bio</th>
-                <th scope="col">UrlUser</th> -->
                 <th scope="col" class="text-center">Mais Informações</th>
             </tr>
         </thead>
@@ -14,8 +12,6 @@
             <tr *ngIf="i/limitator < 1">
                 <td style="width: 45%;" >{{filterResult.searchedDate}}</td>
                 <td style="width: 40%;" class="text-center">{{filterResult.searchedName}}</td>
-                <!-- <td style="width: 35%;"></td>
-                <td style="width: 25%;" class="tdoby__tr__link"></td> -->
                 <td style="width: 5%;" class="text-center">
                     <button class="btn" (click)="moreInfo(filterResult.searchedName)">
                         <a class="eyes">
