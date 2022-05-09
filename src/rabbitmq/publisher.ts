@@ -1,18 +1,14 @@
-
 import * as amqp from 'amqplib';
 
-
-
-const message = "oi";
-const conectar = async () => {
+const conectar = async (message: string) => {
     const queueName = "MongoDb"
     try {
         const connection = await amqp.connect("amqp://localhost");
         const channel = await connection.createChannel();
 
-        await channel.assertQueue(queueName); // create queue named "jobs"
+        channel.assertQueue(queueName);
         channel.sendToQueue(queueName, Buffer.from(message));
-        console.log(`Job sent successfully! ${message}`);
+        console.log(`mensagem enviada! ${message}`);
 
         setTimeout(function () {
             connection.close();
@@ -24,4 +20,4 @@ const conectar = async () => {
 
 };
 
-conectar();
+export {conectar};

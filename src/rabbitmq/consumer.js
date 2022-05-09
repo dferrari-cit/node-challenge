@@ -37,35 +37,32 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var amqp = require("amqplib");
-var message = "oi";
-var connect = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var connection_1, channel, queue, e_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 4, , 5]);
-                return [4 /*yield*/, amqp.connect("amqp://localhost:15672")];
-            case 1:
-                connection_1 = _a.sent();
-                return [4 /*yield*/, connection_1.createChannel()];
-            case 2:
-                channel = _a.sent();
-                return [4 /*yield*/, channel.assertQueue("MongoDb")];
-            case 3:
-                queue = _a.sent();
-                channel.sendToQueue("MongoDb", Buffer.from(message));
-                console.log("Job sent successfully! " + message);
-                setTimeout(function () {
-                    connection_1.close();
-                    process.exit(0);
-                }, 5000);
-                return [3 /*break*/, 5];
-            case 4:
-                e_1 = _a.sent();
-                console.log(e_1);
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
-        }
+function conectar() {
+    return __awaiter(this, void 0, void 0, function () {
+        var queueName, connection, channel;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    queueName = "MongoDb";
+                    return [4 /*yield*/, amqp.connect('amqp://localhost')];
+                case 1:
+                    connection = _a.sent();
+                    return [4 /*yield*/, connection.createChannel()];
+                case 2:
+                    channel = _a.sent();
+                    channel.assertQueue(queueName);
+                    channel.assertQueue(queueName, {
+                        durable: true
+                    });
+                    console.log("[*] Waiting for messages in " + queueName + ". To exit press CTRL+C");
+                    channel.consume(queueName, function (msg) {
+                        console.log(" [x] Received " + msg.content.toString());
+                    }, {
+                        noAck: true
+                    });
+                    return [2 /*return*/];
+            }
+        });
     });
-}); };
-connect();
+}
+conectar();
