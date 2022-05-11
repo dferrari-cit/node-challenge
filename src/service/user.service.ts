@@ -15,20 +15,18 @@ export class UserService {
     async findByUserName(userName: string): Promise<[UserDto, Array<StarredDto>]> {
         let result: [UserDto, StarredDto[]] | any;
         try {
+            await this.dbLocalService.findUser(userName).then(user => {
+                result = user;
+            }).catch(async erro => {
                 result = await request({
-                method: "GET",
-                url: "/users/" + userName
-            }).then(async result => {
-                const userDto: UserDto = this.userDtoMapper.responseToDto(result);
-                const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
-                this.dbLocalService.createUser([userDto, starredDto]);
-                return [userDto, starredDto];
-
-            }).catch(async error => {
-                console.log('entrou no catch');
-                if(error.status !== HttpStatus.NOT_FOUND){
-                    return await this.dbLocalService.findUser(userName);
-                }
+                    method: "GET",
+                    url: "/users/" + userName
+                }).then(async result => {
+                    const userDto: UserDto = this.userDtoMapper.responseToDto(result);
+                    const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
+                    this.dbLocalService.createUser([userDto, starredDto]);
+                    return [userDto, starredDto];
+                });
             });
             return result;
         } catch (error) {
