@@ -10,6 +10,7 @@ services:
       - TZ=America/Sao_Paulo
     depends_on:
       - mongo
+      - rabbitmq
   mongo:
     image: mongo
     restart: always
@@ -19,3 +20,15 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: secret
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbit
+    restart: always
+    ports:
+      - 5675:5672
+      - 15675:15672
+    volumes:
+      - ./rabbitData:/var/lib/rabbitmq/
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
