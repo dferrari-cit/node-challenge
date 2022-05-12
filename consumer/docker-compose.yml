@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  remoteconsumer:
+    build: .
+    container_name: remoteconsumer
+    ports:
+      - "3001:3000"

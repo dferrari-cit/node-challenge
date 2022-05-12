@@ -1,6 +1,7 @@
 # compiled output
 /dist
 /node_modules
+/consumer/node_modules
 
 # Logs
 logs

@@ -1,0 +1,24 @@
+{
+  "name": "consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -w ",
+    "build": "tsc remote-database.ts rabbitmqServer.ts consumer.ts index.ts",
+    "start": "node index.js"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/mongoose": "^5.11.97",
+    "amqplib": "^0.9.0",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.3.3",
+    "typescript": "^4.6.4"
+  }
+}

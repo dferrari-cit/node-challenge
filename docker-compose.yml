@@ -20,6 +20,11 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: secret
+  remoteconsumer:
+    build: ./consumer
+    container_name: remoteconsumer
+    depends_on:
+      - rabbitmq
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbit
