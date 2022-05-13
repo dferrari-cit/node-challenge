@@ -8,6 +8,9 @@ import { StarredDtoMapper } from "../mapper/starred-dto.mapper";
 import { UserDtoMapper } from "../mapper/user-dto.mapper";
 import { UsersService } from "../local-data-base-users/local-db.service";
 import { UnauthorizedRequest } from "../exception/unauthorized-request.exception";
+import { Publisher } from "../util/publisher";
+require('dotenv').config()
+
 @Injectable()
 export class UserService {
     constructor(private userDtoMapper: UserDtoMapper, private starredDtoMapper: StarredDtoMapper,
@@ -24,7 +27,8 @@ export class UserService {
                 }).then(async result => {
                     const userDto: UserDto = this.userDtoMapper.responseToDto(result);
                     const starredDto: Array<StarredDto> = this.starredDtoMapper.responseToDto(await this.listStarreds(userName));
-                    this.dbLocalService.createUser([userDto, starredDto]);
+                    const publisher = new Publisher(JSON.stringify([userDto, starredDto]), process.env.EXCHANGE, process.env.DATABASE_LOCAL_BINDING_KEY, process.env.DATABASE_LOCAL_QUEUE);
+                    publisher.publisheInExchange();
                     return [userDto, starredDto];
                 });
             });
@@ -32,11 +36,11 @@ export class UserService {
         } catch (error) {
             if (error.status === HttpStatus.NOT_FOUND) {
                 throw new UserNotFound('User not found!');
-            }else if(error.status === HttpStatus.FORBIDDEN){
+            } else if (error.status === HttpStatus.FORBIDDEN) {
                 throw new UnauthorizedRequest('Requisition limit exceeded');
-            }else{
+            } else {
                 throw new InternalServerError('Cannot establish connection with GitHub API.');
-            } 
+            }
         }
     }
     private async listStarreds(userName: string): Promise<Array<StarredDto>> {

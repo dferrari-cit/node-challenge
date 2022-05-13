@@ -1,6 +1,5 @@
 import { Controller, Get, Param } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
-import { Consumer } from "src/util/consumer";
 import { Registry } from "../model/registry.model";
 import { RemoteDBService } from "../service/remote.db.service";
 
@@ -32,17 +31,6 @@ export class RegistryController {
     @ApiResponse({ status: 200, description: 'Successful!', type: Registry, isArray: true })
     async getBydate(@Param('searchedDate') searchedData: string): Promise<Registry[]> {
         return this.registryService.getByDate(searchedData);
-    }
-
-    @Get('consumer')
-    async getMsg() {
-        const consumer = new Consumer('test_queue')
-        const messages = await consumer.consume()
-        messages.forEach((message) => {
-            console.log(message)
-            this.registryService.create(message)
-        })
-        return messages
     }
 
 }

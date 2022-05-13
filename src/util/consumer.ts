@@ -16,7 +16,6 @@ export class Consumer {
         await this.server.start();
         await this.server.consumeInQueue(this.queue, async (message) => {
             messages.push(JSON.parse(message.content.toString()));
-            console.log(message.content.toString());
         });
         await this.server.closeConnection()
         return messages;

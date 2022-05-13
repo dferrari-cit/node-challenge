@@ -6,6 +6,7 @@ import { UserMapper } from "../mapper/user.model.mapper";
 import { UserModel } from "../model/user.model";
 import { UserService } from "../service/user.service";
 import { Publisher } from "src/util/publisher";
+require('dotenv').config()
 
 
 @Controller('user')
@@ -67,14 +68,11 @@ export class UserController {
     })
     async userInfo(@Param('user') user: string) {
         const response = await this.userService.findByUserName(user);
-        
-        const registry = new Registry(user)
-        const publisher = new Publisher(JSON.stringify(registry),'test.direct', 'rota_q1', 'test_queue')
-        console.log('mensage: '+publisher.mensage)
-        publisher.publisheInExchange()
-        
 
-        //this.registryService.create(new Registry(user));
+        const registry = new Registry(user)
+        const publisher = new Publisher(JSON.stringify(registry), process.env.EXCHANGE, process.env.DATABASE_REMOTE_BINDING_KEY, process.env.DATABASE_REMOTE_QUEUE)
+        publisher.publisheInExchange()
+
         return this.userMapper.dtoToModel(response);
     }
 }
