@@ -4,6 +4,7 @@ import { FilterFormComponent } from './filter-form/filter-form.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
 
@@ -19,7 +20,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
       ReactiveFormsModule, 
       FormsModule,
       CommonModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      RouterModule
   ]
 })
 

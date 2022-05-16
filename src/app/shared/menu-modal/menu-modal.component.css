@@ -1,0 +1,19 @@
+.menu ul li {
+    cursor: pointer;
+    transition: 1.0s;
+}
+
+.menu ul li:hover {
+    color: #102758;
+}
+
+.li__home, .li__history {
+
+}
+
+::ng-deep .menu-style{
+    background-color: #555A65;
+    color:white;
+    margin-top: 95px;
+    top: 0px;
+}

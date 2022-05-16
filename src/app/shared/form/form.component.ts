@@ -60,7 +60,6 @@ export class FormComponent implements OnInit {
         (err: ErrorUser) => {
           //this.userNameInput?.nativeElement.focus();
           if (err.status == '404') {
-            console.log("AQUIIIII")
             this.router.navigate(['search/error/', 'notfounduser']);
           } else if (err.status == '504') {
             this.router.navigate(['search/error/', 'gatewaytimeouterror']);

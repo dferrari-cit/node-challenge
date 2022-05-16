@@ -14,6 +14,7 @@ export class FilterTableComponent implements OnInit {
   pageArray = this.filterResultArray;
   pagination = true;
   limitator = 10;
+  tam!: boolean;
 
   constructor(private router: Router) { }
 
@@ -34,5 +35,11 @@ export class FilterTableComponent implements OnInit {
 
   moreInfo(userName: string){
     this.router.navigate(['search', userName])
+  }
+
+  checkArray(){
+    if(this.filterResultArray.length == 0){
+      this.tam = true;
+    }
   }
 }

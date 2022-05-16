@@ -1,1 +1,7 @@
-<p>menu-modal works!</p>
+<div class="menu" (click)="closedModal()" >
+    <ul>
+        <li class="li__home" [routerLink]="['home']">Home</li>
+        <li class="li__history mt-3" [routerLink]="['filter']">Histórico</li>
+    </ul>
+</div>
+

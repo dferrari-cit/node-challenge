@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-menu-modal',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public snackBarRef: MatSnackBarRef<MenuModalComponent>,
+    @Inject(MAT_SNACK_BAR_DATA) public data: any
+  ) {}
 
   ngOnInit(): void {
   }
 
+  closedModal(){
+    this.snackBarRef.dismiss();
+  }
 }

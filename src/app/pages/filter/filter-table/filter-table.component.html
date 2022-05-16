@@ -25,11 +25,11 @@
         </tbody>
     </table>   
    
-    <div class="not-found-register mt-4" *ngIf="filterResultArray.length == 0">
+    <div class="not-found-register mt-4" *ngIf="checkArray()">
         <p>Não há resultados para está pesquisa...</p>
     </div>
 
-    <div class="pagination">
+    <div class="pagination" *ngIf="filterResultArray != undefined">
         <mat-paginator 
             [length]="filterResultArray.length"
             [pageSize]="limitator"

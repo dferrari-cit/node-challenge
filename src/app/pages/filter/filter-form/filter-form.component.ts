@@ -78,7 +78,9 @@ export class FilterFormComponent implements OnInit {
         this.emitResult.emit(this.filterResult);
         
       },
-      (err: any) => {console.log('ERROR: ' + err)}
+      (err: any) => {
+        console.log('ERROR: ' + err)
+      }
     )
   }
 
