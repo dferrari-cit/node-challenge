@@ -61,13 +61,16 @@ function saveUserRegistry(userInfo, starredList) {
                 case 1:
                     // 4. Connect to MongoDB
                     _a.sent();
+                    console.log('antes', starredList);
                     user = new UserRegistry({
-                        avatar: userInfo.avatar_url ? userInfo.avatar : '',
+                        avatar: userInfo.avatar_url ? userInfo.avatar_url : '',
                         name: userInfo.name ? userInfo.name : '',
                         bio: userInfo.bio ? userInfo.bio : '',
                         urlUser: userInfo.url ? userInfo.url : '',
-                        starredList: starredList ? starredList : []
+                        starredList: starredList.length > 0 ? starredList : []
                     });
+                    console.log('depois list!!!!!', user.starredList);
+                    console.log('NOVO!!!!!!!!!!!!!!', user);
                     return [4 /*yield*/, user.save()];
                 case 2:
                     _a.sent();

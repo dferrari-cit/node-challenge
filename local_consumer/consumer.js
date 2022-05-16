@@ -60,7 +60,16 @@ var Consumer = /** @class */ (function () {
                                 return __generator(this, function (_a) {
                                     response = JSON.parse(message.content.toString());
                                     user = response[0];
-                                    starredList = response[1];
+                                    starredList = [];
+                                    response[1].forEach(function (starred) {
+                                        starredList.push({
+                                            name: starred.name,
+                                            description: starred.description,
+                                            flagType: starred.visibility,
+                                            urlRepository: starred.url
+                                        });
+                                    });
+                                    console.log('comsumer local##############', user, starredList);
                                     if (message.content.toString() != '') {
                                         (0, local_database_1["default"])(user, starredList);
                                     }

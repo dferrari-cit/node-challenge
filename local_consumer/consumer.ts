@@ -20,7 +20,16 @@ export class Consumer {
         await this.server.consumeInQueue(this.queue, this.exchange, this.routerKey, async (message) => {
             const response = JSON.parse(message.content.toString());
             const user = response[0]
-            const starredList = response[1]
+            let starredList = [];
+            response[1].forEach(starred => {
+                 starredList.push({
+                    name: starred.name,
+                    description: starred.description,
+                    flagType: starred.visibility,
+                    urlRepository: starred.url
+                })
+            })
+            console.log('comsumer local##############',user,starredList)
             if (message.content.toString() != '') {
                 saveUserRegistry(user, starredList);
             }

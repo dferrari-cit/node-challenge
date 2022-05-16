@@ -28,14 +28,17 @@ async function saveUserRegistry(userInfo: any, starredList: Array<any>) {
         '@' + process.env.DATABASE_LOCAL_CONTAINER_CONECTION + ':' + process.env.DATABASE_LOCAL_CONTAINER_PORT +
         '/' + process.env.DATABASE_LOCAL_NAME + '?authSource=admin');
 
+    
+    console.log('antes',starredList)
     const user = new UserRegistry({
-        avatar: userInfo.avatar_url ? userInfo.avatar : '',
+        avatar: userInfo.avatar_url ? userInfo.avatar_url : '',
         name: userInfo.name ? userInfo.name : '',
         bio: userInfo.bio ? userInfo.bio : '',
         urlUser: userInfo.url ? userInfo.url : '',
-        starredList: starredList ? starredList : []
+        starredList: starredList.length > 0 ? starredList : []
     });
-
+    console.log('depois list!!!!!',user.starredList)
+    console.log('NOVO!!!!!!!!!!!!!!',user)
     await user.save();
 }
 
