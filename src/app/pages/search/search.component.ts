@@ -1,7 +1,7 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SearchEmitEventService } from 'src/app/emit-events/search-emit-event.service';
 import { User } from 'src/app/interfaces/user';
-import { SearchEmitEventService } from 'src/app/services/search-emit-event.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({

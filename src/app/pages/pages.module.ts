@@ -16,6 +16,9 @@ import { SearchModule } from "./search/search.module";
         SearchErrosComponent,
         FilterComponent
     ],
+    exports: [
+        SharedModule
+    ],
     imports: [
         CommonModule,
         SharedModule,

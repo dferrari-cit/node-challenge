@@ -1,7 +1,7 @@
 <div class="menu" (click)="closedModal()" >
     <ul>
-        <li class="li__home" [routerLink]="['home']">Home</li>
-        <li class="li__history mt-3" [routerLink]="['filter']">Histórico</li>
+        <li class="li__home" [routerLink]="['home']" (click)="emitPage('Home')">Home</li>
+        <li class="li__history mt-3" [routerLink]="['filter']" (click)="emitPage('Histórico')">Histórico</li>
     </ul>
 </div>
 

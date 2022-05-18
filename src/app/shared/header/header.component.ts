@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
 import { MenuModalComponent } from '../menu-modal/menu-modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { IndentifyRoute } from 'src/app/emit-events/indentify-route';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,15 +11,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() page: string = '';
+  page: string = 'Home';
 
-  rota: string = "";
-
-  constructor(private router: Router, public modal: MatDialog, public snackBar: MatSnackBar) { }
+  constructor(
+    private router: Router, 
+    public modal: MatDialog, 
+    public snackBar: MatSnackBar,
+    private identifyRoute: IndentifyRoute
+    ) { }
 
   ngOnInit(): void {
-    this.rota = window.location.href;
-    console.log("ddddd: " + this.rota)
+    this.identifyRoute.emitRoute.subscribe(
+      pageEmit => this.page = pageEmit
+    )
   }
 
   returnHomePage(){

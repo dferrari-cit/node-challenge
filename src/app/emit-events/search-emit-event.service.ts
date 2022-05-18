@@ -6,9 +6,7 @@ export class SearchEmitEventService {
 
     emitUserModal = new EventEmitter<User>();
 
-    constructor() {
-
-    }
+    constructor() {}
 
     emitUser(userModel: User){
         this.emitUserModal.emit(userModel);

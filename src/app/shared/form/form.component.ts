@@ -1,9 +1,9 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SearchEmitEventService } from 'src/app/emit-events/search-emit-event.service';
 import { ErrorUser } from 'src/app/interfaces/error-user';
 import { User } from 'src/app/interfaces/user';
-import { SearchEmitEventService } from 'src/app/services/search-emit-event.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 export class FormComponent implements OnInit {
 
   userGitForm: FormGroup;
-  rota: any;
+  rota: string = '';
   user!: User;
   @Output() emitFormText = new EventEmitter<string>();
   @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement> | undefined;
@@ -36,9 +36,6 @@ export class FormComponent implements OnInit {
       userNameForm: ['', Validators.required]
     });
 
-
-    this.rota = this.activatedRoute.snapshot.routeConfig?.path;
-    //console.log('page: ' + this.rota)
   }
 
   search() {
@@ -48,13 +45,15 @@ export class FormComponent implements OnInit {
     this.userService.findUser(userName)
       .subscribe(
         (resp) => {
+          this.rota = window.location.href.slice(22);
+          this.router.navigate(['search', userName])
 
-          if( this.activatedRoute.snapshot.routeConfig?.path == 'home' ){
-            this.router.navigate(['search', userName])
-          }else{
+          if( this.rota != 'home' || this.rota.indexOf('error') < 0 ){
+            
             this.user = this.userService.treatResponse(resp);
             this.searchEmiteventservice.emitUser(this.user)            
           }
+          
           
         },
         (err: ErrorUser) => {

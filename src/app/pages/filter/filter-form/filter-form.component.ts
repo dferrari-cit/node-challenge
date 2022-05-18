@@ -74,7 +74,7 @@ export class FilterFormComponent implements OnInit {
     .subscribe(
       (resp) => {
         this.filterResult = resp;
-        console.log('Pagina FilterForms: ' + this.filterResult)
+        //console.log('Pagina FilterForms: ' + this.filterResult)
         this.emitResult.emit(this.filterResult);
         
       },
