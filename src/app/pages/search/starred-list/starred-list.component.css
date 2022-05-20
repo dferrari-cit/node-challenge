@@ -1,30 +1,20 @@
 
-.container {
-    align-items: center;  
-    margin-top: 40px;
-}
-
-.cards{ 
-    margin: 25px 10px;
-    padding: 11px;
-}
-
-.card-table {
+.table-repositors{
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left: 10px;
+    margin-top: 30px;
 }
 
-.title__tex {
+.title__text {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.title__tex caption {
+.title__text caption {
     font-size: 20px;
-    color: white;
 }
 
 .content__table { 
@@ -69,11 +59,15 @@ tr td, tr th {
     font-weight: 600;
     font-size: 12px;
     line-height: 14px;
-    height: 75px;
+    height: 90px;
 }
 
 .table__tdoby :hover {
     background-color: #272c31;
+}
+
+.td-response {
+    width: 50%;
 }
 
 .info-url{
@@ -97,4 +91,14 @@ tr td, tr th {
 .no-starred {
     color: #6c757d;
     font-size: 18px;
+}
+
+@media only screen and (max-width: 1023px) { 
+    .content__table {
+        width: 98%;
+    }
+}
+
+@media only screen and (max-width: 560px) { 
+    
 }

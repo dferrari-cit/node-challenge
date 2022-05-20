@@ -13,8 +13,8 @@ export class SearchComponent {
 
   userName: string = '';
   user: User = this.userService.treatResponse( this.activatedRoute.snapshot.data['user'] );
-
   formText:string = '';
+  
 
   constructor(
     private activatedRoute: ActivatedRoute, 

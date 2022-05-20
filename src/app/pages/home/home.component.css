@@ -43,3 +43,20 @@ h1 {
 .my-input:focus {
   border-color: white;
 }
+
+
+@media only screen and (max-width: 660px) {
+  .welcome-card h1{
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .welcome-card h1{
+    font-size: 35px;
+  }
+
+  .welcome-info {
+    font-size: 16px;
+  }
+}

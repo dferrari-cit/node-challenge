@@ -11,7 +11,8 @@ import { IndentifyRoute } from 'src/app/emit-events/indentify-route';
 })
 export class HeaderComponent implements OnInit {
 
-  page: string = 'Home';
+  page: string = '';
+  screen!: number;
 
   constructor(
     private router: Router, 
@@ -21,9 +22,15 @@ export class HeaderComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+
+    this.page = this.identifyRoute.indentifyPage();  
+    console.log(this.page)
+
     this.identifyRoute.emitRoute.subscribe(
       pageEmit => this.page = pageEmit
     )
+
+    this.screen = window.innerWidth;
   }
 
   returnHomePage(){
@@ -35,7 +42,7 @@ export class HeaderComponent implements OnInit {
     const modalRef = this.snackBar.openFromComponent(MenuModalComponent, {
       panelClass: ["menu-style"],
       verticalPosition: 'top',
-      horizontalPosition: 'right',
+      horizontalPosition: 'left',
     });
 
     

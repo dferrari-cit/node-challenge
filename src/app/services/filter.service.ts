@@ -13,7 +13,7 @@ export class FilterService {
     }
 
     findRecords(resquest: string) {
-        console.log('Request: ' + this.apiUrl + resquest)
+        //console.log('Request: ' + this.apiUrl + resquest)
         return this.http.get<Filter[]>(this.apiUrl + resquest);
     }
 }

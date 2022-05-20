@@ -9,12 +9,12 @@ import { User } from 'src/app/interfaces/user';
 export class InfoUserComponent implements OnInit {
 
   @Input() userInfo: User = {'avatar': '', 'bio': '', 'name': '', 'starredList': [], 'urlUser': ''};
+  screen!: number;
   
-  constructor() { 
-  
-  }
+  constructor() { }
 
   ngOnInit(): void {
+    this.screen = window.innerWidth;
   }
 
   addCont(){

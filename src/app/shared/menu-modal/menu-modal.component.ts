@@ -10,13 +10,20 @@ import { IndentifyRoute } from 'src/app/emit-events/indentify-route';
 })
 export class MenuModalComponent implements OnInit {
 
+  page: string = '';
+  
   constructor(
     private identifyRoute: IndentifyRoute,
     public snackBarRef: MatSnackBarRef<MenuModalComponent>,
     @Inject(MAT_SNACK_BAR_DATA) public data: any
-  ) {}
+  ) {
+
+    
+  }
 
   ngOnInit(): void {
+    this.page = this.identifyRoute.indentifyPage();
+    console.log('menu' + this.page)
   }
 
   closedModal(){
@@ -24,6 +31,6 @@ export class MenuModalComponent implements OnInit {
   }
 
   emitPage(page: string){
-    this.identifyRoute.emitPage(page);
+    this.identifyRoute.menuEmitPage(page);
   }
 }

@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(35, 39, 48, 0.65);;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 .filter-form input, select {
@@ -16,7 +19,6 @@
 
 .filter-form-title {
   color: white;
-  margin-top: 8%;
 }
 
 .form__name {
@@ -45,10 +47,17 @@
 
 .filter-form__button {
   height: 35px;
-  height: 35px;
   width: 300px;
   border-radius: 5px 5px;
-  margin-top: 15%;
+  margin-top: 15px;
   font-size: 16px;
 }
 
+@media only screen and (max-width: 500px) { 
+
+  .form__name, .form__date {
+    display: flex;
+
+  }
+
+}

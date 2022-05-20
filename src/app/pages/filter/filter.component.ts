@@ -9,6 +9,7 @@ import { Filter } from 'src/app/interfaces/filter';
 export class FilterComponent {
 
   @Input() filterResultForm: Filter[] = [];
+  @Input() resultRegisters: boolean = true;
 
   constructor() { }
 

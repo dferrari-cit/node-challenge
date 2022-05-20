@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 export class FilterTableComponent implements OnInit {
 
   @Input() filterResultArray: Filter[] = [];
-  pageArray = this.filterResultArray;
-  pagination = true;
-  limitator = 10;
-  tam!: boolean;
+  @Input() resultReg: boolean = true;
+  pageArray: Array<Filter> = this.filterResultArray;
+  pagination: boolean = true;
+  limitator: number = 10;
 
   constructor(private router: Router) { }
 
@@ -34,12 +34,6 @@ export class FilterTableComponent implements OnInit {
   }
 
   moreInfo(userName: string){
-    this.router.navigate(['search', userName])
-  }
-
-  checkArray(){
-    if(this.filterResultArray.length == 0){
-      this.tam = true;
-    }
+   
   }
 }

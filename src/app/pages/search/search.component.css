@@ -1,17 +1,21 @@
-.content {
-    margin-top: 80px;
-}
-
 .contains {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.contains__infos-user {
+    margin-top: 90px;
+    height: 65vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
+}
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    .contains {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+   
 }

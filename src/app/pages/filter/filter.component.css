@@ -1,21 +1,46 @@
 .contains {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-top: 80px;
+  margin-top: 65px;
   padding-top: 50px;
   height: 100%;
   width: 100%;
 }
 
-.form {
+.contains__divs {
   display: flex;
+}
+
+.form {
+  text-align: center;
   margin-left: 5%;
 }
 
 .table {
-  display: flex;
   justify-content: center;
-  margin-left: 5%;
+  margin-left: 3%;
   width: 50%;
+}
+
+@media only screen and (max-width: 905px) {
+  .contains{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contains__divs {
+    width: auto;
+  }
+
+  .form  {
+    margin-left: 0px;
+  }
+
+  .table {
+    margin-left: 0px;
+    margin-top: 55px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
 }

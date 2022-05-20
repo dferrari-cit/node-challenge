@@ -1,16 +1,12 @@
-
-.container {
-    margin-top: 45px;
-}
-
-.cards{ 
-    margin: 25px 10px;
-    padding: 11px;
-}
-
-.card-user {
+.info-user {
+    background-color: #232730;
+    border-radius: 10px;
+    margin-top: 70px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 270px;
-    padding-top: 35px;
 }
 
 .avatar {
@@ -18,7 +14,7 @@
 }
 
 .avatar img {
-    width: 150px;
+    width: 190px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
@@ -26,8 +22,7 @@
 .infos {
     font-family: Source Sans Pro, sans-serif;
     font-size: 16px;
-    display: flex;    
-    
+    display: flex;        
     flex-direction: column;
     width: 100%;
 }
@@ -39,7 +34,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     height: 70px;
-    margin-top: 20px;
     width: 90%;
 }
 
@@ -111,6 +105,10 @@ tr td, tr th {
     padding: 0;
 }
 
+.table__thead {
+    height: 50px;
+}
+
 .table__thead tr {
     background-color: rgb(4 64 8);
     color: #ffffff;
@@ -156,4 +154,52 @@ tr td, tr th {
 .no-starred {
     color: #6c757d;
     font-size: 18px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .info-user {
+        flex-direction: row;
+        align-items: end;
+        height: 170px;
+        padding: 5px 15px;
+        width: 550px;
+    }
+
+    .infos {
+        margin-left: 10px;
+    }    
+
+    .info {
+        height: 50px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    .info label {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .info-user {
+        align-items: center;
+        height: 160px;
+        padding-top: 12px;
+        width: 100%;
+    }
+
+    .avatar{
+        width: 35%;
+    }
+
+    .info {
+        margin-bottom: 22px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) { 
 }

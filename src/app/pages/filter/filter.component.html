@@ -1,9 +1,12 @@
 <!-- <app-header [page]="'Histórico'"></app-header> -->
 <div class="contains">
    <div class="contains__divs form">
-      <app-filter-form (emitResult)="filterResultForm = $event"></app-filter-form>
+      <app-filter-form (emitResult)="filterResultForm = $event" (resgistersResult)="resultRegisters = $event"></app-filter-form>
    </div>
    <div class="contains__divs table">
-      <app-filter-table [filterResultArray]="filterResultForm"></app-filter-table>
+      <app-filter-table 
+      [filterResultArray]="filterResultForm"
+      [resultReg]="resultRegisters"
+      ></app-filter-table>
    </div>
 </div>

@@ -1,7 +1,11 @@
 <div class="menu" (click)="closedModal()" >
     <ul>
-        <li class="li__home" [routerLink]="['home']" (click)="emitPage('Home')">Home</li>
-        <li class="li__history mt-3" [routerLink]="['filter']" (click)="emitPage('Histórico')">Histórico</li>
+        <li (click)="emitPage('Home')">
+            <a [routerLink]="['home']" [ngClass]="{'active': page == 'Home'}">Home</a> 
+        </li>
+        <li (click)="emitPage('Histórico')" >
+            <a [routerLink]="['filter']"  [ngClass]="{'active': page == 'Histórico'}">Histórico</a> 
+        </li>
     </ul>
 </div>
 
