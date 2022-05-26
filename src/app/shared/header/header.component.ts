@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
-import { MenuModalComponent } from '../menu-modal/menu-modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MenuModalComponent } from '../menu-modal/menu-modal.component';
 import { IndentifyRoute } from 'src/app/emit-events/indentify-route';
 @Component({
   selector: 'app-header',
@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router, 
-    public modal: MatDialog, 
     public snackBar: MatSnackBar,
     private identifyRoute: IndentifyRoute
     ) { }
@@ -24,7 +23,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
 
     this.page = this.identifyRoute.indentifyPage();  
-    console.log(this.page)
 
     this.identifyRoute.emitRoute.subscribe(
       pageEmit => this.page = pageEmit
@@ -40,9 +38,10 @@ export class HeaderComponent implements OnInit {
   openMenuModal(){
 
     const modalRef = this.snackBar.openFromComponent(MenuModalComponent, {
+      
       panelClass: ["menu-style"],
       verticalPosition: 'top',
-      horizontalPosition: 'left',
+      horizontalPosition: 'left'
     });
 
     

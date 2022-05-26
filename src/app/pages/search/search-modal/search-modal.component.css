@@ -1,0 +1,18 @@
+::ng-deep  .mat-dialog-container {
+    background-color: #2a2f39ed;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+}
+
+.icon:hover {
+    font-size: 32px;
+    color: rgb(206, 206, 206);
+}
+

@@ -23,7 +23,6 @@ import { MenuModalComponent } from './menu-modal/menu-modal.component';
         ReactiveFormsModule, 
         FormsModule, 
         CommonModule,
-        MatDialogModule,
         MatSnackBarModule,
         RouterModule
     ]

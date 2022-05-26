@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchEmitEventService } from 'src/app/emit-events/search-emit-event.service';
 import { User } from 'src/app/interfaces/user';
@@ -12,8 +12,16 @@ import { UserService } from 'src/app/services/user.service';
 export class SearchComponent {
 
   userName: string = '';
-  user: User = this.userService.treatResponse( this.activatedRoute.snapshot.data['user'] );
+  user: User = {
+    'avatar': '', 
+    'name': '', 
+    'bio': '', 
+    'urlUser': '', 
+    'starredList': [ { 'name': '', 'description': '', 'flagType': '', 'urlRepository': '' } ] 
+  }
+
   formText:string = '';
+  @Input() modalForm: boolean = false;
   
 
   constructor(
@@ -23,40 +31,14 @@ export class SearchComponent {
     ) { }
 
   ngOnInit(): void {
-    //this.userName = this.activatedRoute.snapshot.params['userName'];
-    //this.user = this.userService.treatResponse( this.activatedRoute.snapshot.data['user'] );
+    
+    if(this.modalForm == false){
+      this.user =  this.userService.treatResponse( this.activatedRoute.snapshot.data['user'] );
+    }
 
     this.searchEmiteventservice.emitUserModal.subscribe(
       userEmit => this.user = userEmit
     )
   }
-
-  ngOnChanges(changes: SimpleChanges){
-    //console.log('Fui alterado')
-  }
-
-  // private treatUser(userT: User){
-  //   if(userT.avatar == null){
-  //     userT.avatar = '../../../assets/imgs/no-image.webp'
-  //   }
-  //   if(userT.bio == null){
-  //     userT.bio = '...'
-  //   }
-  //   if(userT.name == null){
-  //     userT.name = '...'
-  //   }
-  //   if(userT.urlUser == null){
-  //     userT.urlUser = '...'
-  //   }else{
-  //     userT.urlUser = "https://github.com/" + userT.urlUser.slice(29, )
-  //   }
-  //   if(userT.starredList.length > 0){
-  //     userT.starredList.forEach(element => {
-  //       let repository = element.urlRepository;
-  //       element.urlRepository = "https://github.com/" + repository.slice(29, )
-  //     })    
-  //   }
-  //   this.user = userT;
-  // }
 
 }

@@ -4,31 +4,52 @@
             <caption>Top #5 - Favorite Repositories</caption>
         </div>
     </div>
-    <table aria-describedby="table of starred list" class="content__table">
-        <thead class="table__thead">
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">flagType</th>
-                <th scope="col" class="text-center">Git</th>
-            </tr>
-        </thead>
-        <tbody class="table__tdoby" *ngFor="let starredElement of starredListArray">
-            <tr>
-                <td>{{starredElement.name}}</td>
-                <td class="td-response">
-                    {{starredElement.description.length > 144 ? starredElement.description.substr(0,144)+'...': starredElement.description}}
-                </td>
-                <td class="text-center">{{starredElement.flagType}}</td>
-                <td>
-                    <button class="btn">
-                        <a class="eyes" href="{{starredElement.urlRepository}}" target="_blank">
-                            <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="d-flex justify-content-center">
+        <table aria-describedby="table of starred list" class="content__table" *ngIf="screen > 560">
+            <thead class="table__thead">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">flagType</th>
+                    <th scope="col" class="text-center">Git</th>
+                </tr>
+            </thead>
+            <tbody class="table__tdoby" *ngFor="let starredElement of starredListArray">
+                <tr>
+                    <td>{{starredElement.name}}</td>
+                    <td class="td-response">
+                        {{starredElement.description.length > 144 ? starredElement.description.substr(0,144)+'...': starredElement.description}}
+                    </td>
+                    <td class="text-center">{{starredElement.flagType}}</td>
+                    <td>
+                        <button class="btn">
+                            <a class="eyes" href="{{starredElement.urlRepository}}" target="_blank">
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content__table-mobile" *ngIf="screen <= 560">
+        <div class="card" *ngFor="let starredElement of starredListArray">
+            <div class="card__name-flag">
+                <div class="card__info">Name:<label class="ms-3">{{starredElement.name}}</label></div>
+                <div class="card__info">FlagType:<label class="ms-3">{{starredElement.flagType}}</label></div>
+                <div class="card__info">
+                    <a class="eyes" href="{{starredElement.urlRepository}}" target="_blank">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card__decription">
+                <div class="card__info"><p class="m-0 mb-1">Descrição:</p><label class="description">{{starredElement.description}}</label></div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="no-starred mt-4" *ngIf="starredListArray.length == 0">
         <p>No exist favorite repositories...</p>
     </div>

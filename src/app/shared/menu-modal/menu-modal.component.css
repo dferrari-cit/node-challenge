@@ -1,11 +1,18 @@
 ::ng-deep .menu-style{
     background-color: #232730;
-    margin-top: 88px;
+    margin-top: 90px;
     padding: 0px;
     top: 0px;
 }
 
+
 ::ng-deep .mat-snack-bar-container{
+    min-width: 205px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+::ng-deep .mat-snack-bar-handset{
     min-width: 205px;
     margin-right: 0px;
     margin-left: 0px;
@@ -14,6 +21,11 @@
 .menu {
     text-align: start;    
     width: 100%;
+    background-color: brown;
+}
+
+.menu-down {
+    margin-top: 45px;
 }
 
 .menu ul {
@@ -37,6 +49,16 @@ li a:hover {
     background-color: rgb(41, 43, 46);
 }
 
-@media only screen and (max-width: 600px) {    
-    
+
+/* @media only screen and (max-width: 768px) {  
+    ::ng-deep .mat-snack-bar-container{
+        margin-top: 90px;
+    }
+} */
+
+@media only screen and (max-width: 500px) {    
+    ::ng-deep .mat-snack-bar-container, .mat-snack-bar-handset{
+        margin-top: 90px;
+        min-width: 205px;
+    }
 }

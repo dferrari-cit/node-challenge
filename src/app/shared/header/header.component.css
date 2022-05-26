@@ -12,6 +12,10 @@ a{
     height: 90px;
 }
 
+.navbar__input {
+    margin-left: 8%;
+}
+
 .navbar__logo {
     display: flex;
     justify-content: left;
@@ -58,18 +62,18 @@ a{
     color: #acacac;
 }
 
-@media only screen and (max-width: 560px) {
-    .header__navbar {
-       
-    }
-
-    .navbar__logo {
-        margin-left: 25%;
-        width: 50%;
-    }
-
+@media only screen and (max-width: 769px) {
     .navbar__bars {
         margin-right: 0%;
-        width: 15%;
+    }
+
+    .navbar-brand {
+        margin-right: 15%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .navbar-brand {
+        margin-right: 2%;
     }
 }

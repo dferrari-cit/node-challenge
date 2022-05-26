@@ -1,4 +1,4 @@
-<div class="menu" (click)="closedModal()" >
+<div class="menu" (click)="closedModal()" [ngClass]="{'menu-down': page != 'Histórico' && screen <= 768}">
     <ul>
         <li (click)="emitPage('Home')">
             <a [routerLink]="['home']" [ngClass]="{'active': page == 'Home'}">Home</a> 

@@ -10,10 +10,12 @@ export class StarredListComponent implements OnInit {
   
   @Input() starredListArray : StarredList[] = [];
   starredList: StarredList = {'name': '', 'description': '', 'flagType': '','urlRepository': ''};
+  screen!: number;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.screen = window.innerWidth;
   }
 
 }

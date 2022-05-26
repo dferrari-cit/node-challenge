@@ -93,12 +93,58 @@ tr td, tr th {
     font-size: 18px;
 }
 
-@media only screen and (max-width: 1023px) { 
+.card {
+    margin-top: 35px;
+    background-color: rgba(35, 39, 48, 0.65);
+    height: 120px;
+    padding: 5px 5px 5px 20px;
+    border-left: 25px solid;
+    border-left-color: rgba(33, 125, 31, 0.4);
+    border-top-left-radius: 30px;
+    width: 98%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card__info {
+    color: #838383;
+    font-weight: 500;
+}
+
+.card__info label {
+    color: #D9D9D9;
+    
+}
+
+.description {
+    border: 1px solid;
+    border-color: #545454;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px) { 
     .content__table {
         width: 98%;
     }
 }
 
-@media only screen and (max-width: 560px) { 
+@media only screen and (max-width: 768px) { 
+    .table-repositors {
+        margin-left: 0px;
+    }
     
+    .content__table {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 560px) { 
+    .card__name-flag {
+        display: flex;
+        justify-content: space-between;
+    }
 }

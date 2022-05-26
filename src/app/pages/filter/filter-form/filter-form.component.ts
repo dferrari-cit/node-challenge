@@ -64,7 +64,7 @@ export class FilterFormComponent implements OnInit {
         dateForm += this.filterForm.get('inputYear')?.value;
       }
 
-      this.request += 'data/' + dateForm  ;
+      this.request += 'data/' + dateForm ;
     }
 
     this.filter.findRecords(this.request)

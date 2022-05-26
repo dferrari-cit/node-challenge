@@ -2,10 +2,10 @@
     <nav class="header__navbar">       
         <div class="navbar__bars" (click)="openMenuModal()">
             <i class="fa fa-bars" aria-hidden="true"></i>
-            <p class="ms-3 me-3" *ngIf="screen > 768">{{ page }}</p>
+            <p class="ms-3 me-3" *ngIf="screen >= 768">{{ page }}</p>
         </div>       
 
-        <div class="navbar__input" *ngIf="page != 'Histórico' && screen >= 768">
+        <div class="navbar__input" *ngIf="page != 'Histórico' && screen > 768">
             <app-form ></app-form>
         </div>
 
@@ -14,11 +14,11 @@
             <img class="logo-git" src="../../assets/imgs/GitHub-Mark-Light.png" alt="" srcset="">
         </div>
 
-        <a *ngIf="screen < 768" class="navbar-brand">GitHub USER</a>
-        <img *ngIf="screen < 768" class="logo-git" src="../../assets/imgs/GitHub-Mark-Light.png" alt="" srcset="">
+        <a *ngIf="screen <= 768" class="navbar-brand">GitHub USER</a>
+        <img *ngIf="screen <= 768" class="logo-git" src="../../assets/imgs/GitHub-Mark-Light.png" alt="" srcset="">
         
     </nav>
-    <div class="navbar__divs navbar__input2" *ngIf="page != 'Histórico' && screen < 768">
+    <div class="navbar__divs navbar__input2" *ngIf="page != 'Histórico' && screen <= 768">
         <app-form ></app-form>
     </div>
 </header>

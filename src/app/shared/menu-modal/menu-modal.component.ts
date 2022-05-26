@@ -1,5 +1,4 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 import { IndentifyRoute } from 'src/app/emit-events/indentify-route';
 
@@ -11,10 +10,11 @@ import { IndentifyRoute } from 'src/app/emit-events/indentify-route';
 export class MenuModalComponent implements OnInit {
 
   page: string = '';
+  screen!: number;
   
   constructor(
     private identifyRoute: IndentifyRoute,
-    public snackBarRef: MatSnackBarRef<MenuModalComponent>,
+    public menuSnackBar: MatSnackBarRef<MenuModalComponent>,
     @Inject(MAT_SNACK_BAR_DATA) public data: any
   ) {
 
@@ -23,14 +23,16 @@ export class MenuModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.page = this.identifyRoute.indentifyPage();
-    console.log('menu' + this.page)
+    this.screen = window.innerWidth;
   }
 
   closedModal(){
-    this.snackBarRef.dismiss();
+    this.menuSnackBar.dismiss();
   }
 
   emitPage(page: string){
     this.identifyRoute.menuEmitPage(page);
   }
+
+ 
 }

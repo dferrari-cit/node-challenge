@@ -1,6 +1,6 @@
-<!-- <app-header [page]="'Home'"></app-header>      -->
-<div class="contains">    
-    <app-info-user [userInfo]="user" ></app-info-user> 
+
+<div class="contains" [class.mtop-90]="modalForm == false">    
+    <app-info-user [userInfo]="user"></app-info-user> 
     <app-starred-list [starredListArray]="user.starredList"></app-starred-list>   
 </div>
 

@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog'
+import { Router } from '@angular/router';
+
 import { Filter } from 'src/app/interfaces/filter';
 import { PageEvent } from '@angular/material/paginator';
-import { Router } from '@angular/router';
+import { SearchModalComponent } from '../../search/search-modal/search-modal.component';
 
 @Component({
   selector: 'app-filter-table',
@@ -16,7 +19,10 @@ export class FilterTableComponent implements OnInit {
   pagination: boolean = true;
   limitator: number = 10;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    public searchModal: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
@@ -32,8 +38,14 @@ export class FilterTableComponent implements OnInit {
       }
     })
   }
-
-  moreInfo(userName: string){
-   
+openSearchModal(userName: string) {
+  
+    const modalRef = this.searchModal.open(SearchModalComponent, {
+      minWidth: '95%',
+      minHeight: '30%',
+      autoFocus: false,
+      panelClass: ["searchModal-style"],
+      data: userName
+    });
   }
 }

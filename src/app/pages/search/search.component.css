@@ -1,12 +1,13 @@
 .contains {
-    margin-top: 90px;
     height: 65vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
+    align-items: start;
 }
-
+.mtop-90{
+    margin-top: 90px;
+}
 
 
 
