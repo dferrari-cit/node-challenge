@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
     )
 
     this.screen = window.innerWidth;
+    console.log(this.screen)
   }
 
   returnHomePage(){
